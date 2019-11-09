@@ -16,8 +16,14 @@ and then activate this environment by running `. venv/bin/activate`. Once you ar
 pip install -r requirements.txt
 ```
 
-Finally, run `flask run` and if everything is successful you should see the following:
+Now, you're going to want to create a `.env` file to toggle all your environment settings.
 
+Run the following command to set up the required options!
+```
+mv .env-example .env
+```
+
+Finally, run `flask run` and if everything is successful you should see the following:
 ```
 * Environment: production
    WARNING: This is a development server. Do not use it in a production deployment.
