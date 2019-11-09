@@ -1,4 +1,4 @@
-# MindfulProject :brain:
+# MindfulProject :low_brightness:
 
 Open-source symptom tracking the the growth minded.
 
