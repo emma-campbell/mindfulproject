@@ -1,1 +1,4 @@
 testvenv
+__pycache__
+
+venv
