@@ -1,11 +1,35 @@
 <! DOCTYPE html>
 <html>
 
-    {% include partials/_head.html %}
+    {% include 'partials/_head.html' %}
 
-    <body>
+    <body class="has-navbar-fixed-top">
+
+        <header>
+            <!-- include navbar eventually -->
+            {% include 'partials/_nav.html' %}
+
+        </header>
+
+        {% block notifications %}
+        <div class="container has-text-centered">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="notification">
+                {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </div>
+        {% endblock%}
 
         {% block content %}{% endblock %}
+
+        {% if footer %}
+        {% include 'partials/_footer.html' %}
+        {% endif %}
 
     </body>
 </html>

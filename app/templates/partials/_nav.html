@@ -1,0 +1,24 @@
+{% block nav %}
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="{{ url_for('main.index') }}">
+            <img class="image is-64x64"
+                 src="{{ url_for('static', filename='imgs/emoji.svg') }}">
+            <p class="title">mindful.</p>
+        </a>
+    </div>
+    <div class="navbar-menu">
+        <div class="navbar-start"></div>
+        <div class="navbar-end">
+            {% if current_user.is_anonymous %}
+            <div class="navbar-item">
+                <div class="buttons has-addons">
+                    <button class="button is-primary is-small"><b>Login</b></button>
+                    <button class="button is-small"><b>Register</b></button>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+{% endblock %}
