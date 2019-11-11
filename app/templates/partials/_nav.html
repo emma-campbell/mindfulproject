@@ -13,8 +13,12 @@
             {% if current_user.is_anonymous %}
             <div class="navbar-item">
                 <div class="buttons has-addons">
-                    <button class="button is-primary is-small"><b>Login</b></button>
-                    <button class="button is-small"><b>Register</b></button>
+                    <a href="{{ url_for('auth.login') }}">
+                        <button class="button is-primary is-small"><b>Login</b></button>
+                    </a>
+                    <a href="{{ url_for('auth.register') }}">
+                        <button class="button is-small"><b>Register</b></button>
+                    </a>
                 </div>
             </div>
             {% endif %}

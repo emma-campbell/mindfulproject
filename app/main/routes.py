@@ -15,7 +15,7 @@ def before_request():
 
 @bp.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('main/index.html')
+    return render_template('main/index.html', nav=True)
 
 @bp.route('/user/<id>', methods=['GET', 'POST'])
 def user(id):
@@ -23,4 +23,4 @@ def user(id):
 
     print(user)
     print(user.access)
-    return render_template('user.html', user=user)
+    return render_template('user.html', user=user, nav=True)

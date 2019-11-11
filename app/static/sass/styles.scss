@@ -1,9 +1,6 @@
 @charset "utf-8";
 
-// =================== IMPORTS ========================
-@import "../node_modules/bulma/bulma.sass";
 @import url('https://fonts.googleapis.com/css?family=Karla|Rubik&display=swap');
-// ====================================================
 
 // Color Scheme
 $purple : #323260;
@@ -18,21 +15,15 @@ $dark-blue : #10293B;
 $white: #F2F2ED;
 
 // Bulma Variables
-
 $font-heading : "Rubik", sans-serif;
 $family-sans-serif : "Karla", sans-serif;
 
 $primary : $purple;
-$background: $light-purple;
-
-html {
-    color: $background;
-}
+$body-background-color: $light-purple;
 
 body {
-    padding: 2em;
-    margin: 1em 10px;
     font-family: $family-sans-serif;
+    background-color: $body-background-color;
 }
 
 .title {
@@ -42,3 +33,15 @@ body {
 p {
     font-family: $family-sans-serif;
 }
+
+.panel {
+    background-color: $white;
+    justify-content: center;
+    max-width: 30em;
+}
+
+#form {
+    padding: 1em 2em;
+}
+
+@import "../node_modules/bulma/bulma.sass";
