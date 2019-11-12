@@ -30,6 +30,7 @@ def create_app(config_class=Config):
     login.init_app(app)
 
     with app.app_context():
+        db.drop_all() # this is just dev
         db.create_all()
 
     from app.auth import bp as auth_bp

@@ -18,6 +18,7 @@ def login():
 
         user = User.query.filter_by(email=request.form['email']).first()
         print (user)
+
         if user is None or not user.check_password(request.form['password']):
             flash('Invalid email or password.')
             return redirect(url_for('auth.login'))
@@ -57,6 +58,8 @@ def register():
         db.session.commit()
 
         flash('User {0} has been registered!'.format(user.id))
+
+        # TODO: New Set Up Profile module
         return redirect(url_for('main.index', nav=True))
 
     return render_template('auth/register.html',
