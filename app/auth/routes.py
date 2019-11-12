@@ -14,15 +14,17 @@ def login():
 
     form = LoginForm()
 
-    if form.validate_on_submit():
-        user = User.query.filter_by(email=form['email']).first()
+    if request.method == "POST":
 
-        if user is None or not user.check_password(form['password']):
+        user = User.query.filter_by(email=request.form['email']).first()
+        print (user)
+        if user is None or not user.check_password(request.form['password']):
             flash('Invalid email or password.')
             return redirect(url_for('auth.login'))
 
 
         login_user(user)
+        print(user)
 
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
@@ -50,8 +52,14 @@ def register():
                     email=request.form['email'])
 
         user.set_password(request.form['password'])
-        flash('User {0} has been registered!'.format(user.id))
 
+        db.session.add(user)
+        db.session.commit()
+
+        flash('User {0} has been registered!'.format(user.id))
         return redirect(url_for('main.index', nav=True))
 
-    return render_template('auth/register.html', title='Register', form=form, nav=False)
+    return render_template('auth/register.html',
+                           title='Register',
+                           form=form,
+                           nav=True)

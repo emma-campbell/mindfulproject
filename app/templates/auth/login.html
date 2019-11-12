@@ -1,42 +1,69 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="hero is-fullheight">
-        <div class="container has-text-centered" id="panel-container">
-            <div class="panel is-primary">
-                {% if title %}
-                <div class="panel-heading">
-                    {{ title }}
-                </div>
-                {% endif %}
-                <div class="container has-text-left" id="form">
-                    <form action="{{ url_for('auth.login') }}">
-                        <div class="field">
-                            <label class="label">{{ form.email.label}}</label>
-                            <div class="control has-icons-left">
-                                <input class="input has-icons-left" type="text" placeholder="" name="email">
-                                <span class="icon is-small is-left">
-                                    <i class="fas fa-envelope"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label class="label">{{ form.password.label }}</label>
-                            <div class="control">
-                                <input class="input" type="password" placeholder="" name="password">
-                            </div>
-                        </div>
-                        <p class="is-1 is-light-gray">Enter the credentials you used to sign up. Don't remember them? We can help you out <a>here</a>.</p><br>
-                        <div class="field">
-                            <div class="control has-text-centered">
-                                <button class="button is-primary" type="submit" name="submit">
-                                    {{ form.submit.label }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+<section class="hero is-fullheight gradient">
+    <div class="container has-text-centered" id="panel-container">
+        <div class="panel is-primary">
+
+            {% if title %}
+            <div class="panel-heading">
+                {{ title }}
             </div>
+            {% endif %}
+
+            <div class="container has-text-left" id="form">
+                <form action="{{ url_for('auth.login') }}" method="POST">
+
+                    <!-- Email -->
+                    <div class="field">
+                        <label class="label">
+                            {{ form.email.label}}
+                        </label>
+                        <div class="control has-icons-left">
+                            <input class="input has-icons-left"
+                                   type="text"
+                                   placeholder=""
+                                   name="email">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="field">
+                        <label class="label">
+                            {{ form.password.label }}
+                        </label>
+                        <div class="control">
+                            <input class="input"
+                                   type="password"
+                                   placeholder=""
+                                   name="password">
+                        </div>
+                    </div>
+
+                    <!-- Helper Text -->
+                    <p class="is-1 is-light-gray">
+                        Enter the credentials you used to sign up.
+                        Don't remember them? We can help you out
+                        <a>here</a>.
+                    </p>
+                    <br>
+
+                    <!-- Submit -->
+                    <div class="field">
+                        <div class="control has-text-centered">
+                            <button class="button is-primary"
+                                    type="submit"
+                                    name="submit">
+                                {{ form.submit.label }}
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </section>
 {% endblock %}

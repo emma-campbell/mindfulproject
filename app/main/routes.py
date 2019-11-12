@@ -15,12 +15,10 @@ def before_request():
 
 @bp.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('main/index.html', nav=True)
+    return render_template('/main/index.html', nav=True)
 
 @bp.route('/user/<id>', methods=['GET', 'POST'])
 def user(id):
     user = User.query.filter_by(id=int(id)).first_404()
-
     print(user)
-    print(user.access)
     return render_template('user.html', user=user, nav=True)

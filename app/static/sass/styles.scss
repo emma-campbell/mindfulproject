@@ -21,10 +21,14 @@ $family-sans-serif : "Karla", sans-serif;
 $primary : $purple;
 $body-background-color: $light-purple;
 
+.gradient {
+    background-image: linear-gradient(to bottom right, #5757a8, $purple);
+}
+
 body {
     font-family: $family-sans-serif;
     background-color: $body-background-color;
-    background-image: linear-gradient(to bottom right, $light-purple, $purple)
+    background-image: $light-purple;
 }
 
 .title {
@@ -46,7 +50,7 @@ p {
 }
 
 #panel-container {
-    padding-top: 10em;
-};
+    padding-top: 5em;
+}
 
 @import "../node_modules/bulma/bulma.sass";
