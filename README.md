@@ -20,7 +20,7 @@ Now, you're going to want to create a `.env` file to toggle all your environment
 
 Run the following command to set up the required options!
 ```
-mv .env-example .env
+cp .env-example .env
 ```
 
 Finally, run `flask run` and if everything is successful you should see the following:

@@ -8,3 +8,4 @@ venv
 node_modules
 >>>>>>> Stashed changes
 .env
+**/.DS_Store
