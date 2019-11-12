@@ -2,6 +2,8 @@
 
 Open-source symptom tracking for the growth minded.
 
+
+
 ## Running
 
 Begin by activating a new virtual environment. On MacOS, this can be done by:
@@ -32,3 +34,7 @@ Finally, run `flask run` and if everything is successful you should see the foll
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 127.0.0.1 - - [09/Nov/2019 16:26:25] "GET / HTTP/1.1" 200 -
 ```
+
+### Dependencies
+
+To run and develop this application, you must use `virtualenv`. You can find download instructions in its documentation [here](https://virtualenv.pypa.io/en/latest/).
