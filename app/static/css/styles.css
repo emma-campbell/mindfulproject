@@ -3,6 +3,7 @@
 body {
   font-family: "Karla", sans-serif;
   background-color: #5E5E8F;
+  background-image: linear-gradient(to bottom right, #5E5E8F, #323260);
 }
 
 .title {
@@ -21,6 +22,10 @@ p {
 
 #form {
   padding: 1em 2em;
+}
+
+#panel-container {
+  padding-top: 10em;
 }
 
 /*! bulma.io v0.8.0 | MIT License | github.com/jgthms/bulma */

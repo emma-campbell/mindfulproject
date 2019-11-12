@@ -5,13 +5,11 @@
 
     <body class="has-navbar-fixed-top">
 
+        {% if nav %}
         <header>
-            <!-- include navbar eventually -->
-            {% if nav %}
             {% include 'partials/_nav.html' %}
-            {% endif %}
-
         </header>
+        {% endif %}
 
         {% block notifications %}
         <div class="container has-text-centered">

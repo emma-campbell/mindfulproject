@@ -24,6 +24,7 @@ $body-background-color: $light-purple;
 body {
     font-family: $family-sans-serif;
     background-color: $body-background-color;
+    background-image: linear-gradient(to bottom right, $light-purple, $purple)
 }
 
 .title {
@@ -43,5 +44,9 @@ p {
 #form {
     padding: 1em 2em;
 }
+
+#panel-container {
+    padding-top: 10em;
+};
 
 @import "../node_modules/bulma/bulma.sass";

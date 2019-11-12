@@ -1,50 +1,84 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class ="panel is-primary">
-    {% if title %}
-    <div class="panel-heading">
-        {{ title }}
-    </div>
-    {% endif %}
-    <form action="{{ url_for('auth.register') }}" method="POST">
-        <div class="container">
-            <div class="field is-grouped">
-                <div class="control">
-                    <label class="label">{{ form.first.label }}</label>
-                    <input class="input" type="text" placeholder="First Name" name="first">
+<section class="hero is-fullheight">
+    <div class="container has-text-centered">
+            <div class ="panel is-primary">
+                {% if title %}
+                <div class="panel-heading">
+                    {{ title }}
                 </div>
-                <div class="control">
-                    <label class="label">{{ form.last.label }}</label>
-                    <input class="input" type="text" placeholder="Last Name" name="last">
-                </div>
-            </div>
-            <div class="field">
-                <label class="label">{{ form.email.label }}</label>
-                <div class="control">
-                    <input class="input" type="email" placeholder="Email" name="email">
-                </div>
-            </div>
-            <div class="field">
-                <label class="label">{{ form.password.label }}</label>
-                <div class="control">
-                    <input class="input" type="password" name="password">
-                </div>
-            </div>
-            <div class="field">
-                <label class="label">{{ form.password2.label }}</label>
-                <div class="control">
-                    <input class="input" type="password" name="password2">
-                </div>
-            </div>
-            <div class="field">
-                <div class="control">
-                    <button class="button is-primary" type="submit" name="submit">
-                        {{ form.submit.label }}
-                    </button>
+                {% endif %}
+                <div class="container has-text-left" id="form">
+                    <form action="{{ url_for('auth.register') }}" method="POST">
+
+                        <div class="field is-grouped">
+
+                            <!-- == First Name == -->
+                            <div class="control">
+                                <label class="label">
+                                    {{ form.first.label }}
+                                </label>
+                                <input class="input"
+                                       type="text"
+                                       placeholder="First Name"
+                                       name="first">
+                            </div>
+                            <!-- == Last Name ==  -->
+                            <div class="control">
+                                <label class="label">
+                                    {{ form.last.label }}
+                                </label>
+                                <input class="input"
+                                       type="text"
+                                       placeholder="Last Name"
+                                       name="last">
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="field">
+                            <label class="label">{{ form.email.label }}</label>
+                            <div class="control">
+                                <input class="input"
+                                       type="email"
+                                       placeholder="Email"
+                                       name="email">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">
+                                {{ form.password.label }}
+                            </label>
+                            <div class="control">
+                                <input class="input"
+                                       type="password"
+                                       name="password">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">
+                                {{ form.password2.label }}
+                            </label>
+                            <div class="control">
+                                <input class="input"
+                                       type="password"
+                                       name="password2">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-primary"
+                                        type="submit"
+                                        name="submit">
+                                    {{ form.submit.label }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </form>
-</div>
+    </div>
+</section>
 {% endblock%}
