@@ -3,8 +3,8 @@ from app import db
 
 from app.models import User
 from app.api import bp
-# from app.api.auth import token_auth
-# from app.api.errors import bad_request
+from app.api.auth import token_auth
+from app.api.errors import bad_request
 
 @bp.route('/users/<int:id>', methods=['GET'])
 def get_user(id):
@@ -25,12 +25,9 @@ def create_user():
     # TODO: Check that ALL required fields are in the request
     # if they aren't, it's a bad request.
     if 'email' not in data or 'password' not in data:
-        # Bad Request
-        pass
-
+        return bad_request('must include username, email, and password fields')
     if User.query.filter_by(email=data['email']):
-        # Bad Request
-        pass
+        return bad_request('please use a different email')
 
 
     user = User()

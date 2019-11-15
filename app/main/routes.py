@@ -22,3 +22,6 @@ def user(id):
     user = User.query.filter_by(id=int(id)).first_404()
     print(user)
     return render_template('user.html', user=user, nav=True)
+
+@bp.route('/user/<id>?edit', methods=['PUT'])
+def edit_user(id):

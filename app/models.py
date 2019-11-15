@@ -23,10 +23,12 @@ class User(UserMixin, db.Model):
     password_hash = db.Column(db.String(128))
     token = db.Column(db.String(32), index=True, unique=True)
     token_expiration = db.Column(db.DateTime)
-
+    _links = {
+        "self" : "/api/users/{0}".format(id)
+    }
 
     def __repr__(self):
-        return '<USER {0}>'.format(self.id)
+        return '< USER /api/users/{0} >'.format(self.id)
 
     def set_password(self, new_password):
         self.password_hash = generate_password_hash(new_password)
@@ -62,6 +64,9 @@ class User(UserMixin, db.Model):
         if include_email:
             data['email'] = self.email
 
+        data['_links'] = {
+            "self" : url_for('api.get_user', id=self.id)
+        }
         return data
 
     def from_dict(self, data, new_user=False):
