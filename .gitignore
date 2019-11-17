@@ -1,12 +1,7 @@
-testvenv
-<<<<<<< Updated upstream
-__pycache__
-
 venv
-**/__pycache__/
-=======
+
+__pycache__/
 node_modules
->>>>>>> Stashed changes
 .env
-**/.DS_Store
-**/.#(.*)
+.DS_Store
+.#(.*)
