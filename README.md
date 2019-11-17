@@ -1,8 +1,19 @@
 # MindfulProject :low_brightness:
 
-Open-source symptom tracking for the growth minded.
+Approximately one in six college aged kids will experience suicidal thoughts, yet no one talks about it. Backed by research, and utilizing CBT (*Cognitive Behavioral Therapy*)
+**mindful.** aims to fix that. Watch as methods based on the science in [Mind Over Mood](https://www.amazon.com/Mind-Over-Mood-Second-Changing/dp/1462520421/ref=sr_1_1?keywords=mind+over+mood&qid=1573778033&sr=8-1) change the way you think, through the ease of your browser.
+
+The MindfulProject web application will allow users to track, graph, and be mindful of their moods. The first four chapters of *Mind Over Mood* tackle the idea of becoming integrated with the way that you are feeling.
+
+Today, journaling is a popular way to track things like our habits, thoughts and moods. However, it can be a very time consuming task that may bring more stress to a busy person’s life than it does comfort. Our website can serve as a quicker and more efficient way to track moods for people that don’t feel they are able to make time for traditional journaling. With targeted prompts, journaling can become easier and more effective than ever.
 
 
+## Team
+
+| Author        | Email                    |
+| :--:          | :--:                     |
+| Emma Campbell | ecampb10@u.rochester.edu |
+| Melissa Welsh | mwelsh2@u.rochester.edu  |
 
 ## Running
 
