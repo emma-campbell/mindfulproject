@@ -4,9 +4,9 @@
   "description": "Symptom tracking for the growth minded",
   "main": "sass/base.sass",
   "scripts": {
-      "css-build" : "node-sass sass/styles.scss  css/styles.css",
-      "css-watch" : "npm run css-build -- --watch",
-      "start"     : "npm run css-watch"
+    "css-build": "node-sass sass/styles.scss  css/styles.css",
+    "css-watch": "npm run css-build -- --watch",
+    "start": "npm run css-watch"
   },
   "keywords": [
     "bulma",
@@ -17,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "bulma": "^0.8.0",
+    "feather-icons": "^4.24.1",
     "node-sass": "^4.13.0",
     "sass": "^1.23.3"
   },
