@@ -1,3 +1,9 @@
+'''
+::module app.auth.oauth
+::date 11-17-2019
+
+Configuration of the google sign in
+'''
 import json
 import urllib.request as urllib
 
@@ -9,9 +15,9 @@ from oauth2client.client import flow_from_clientsecrets
 from oauth2client.file import Storage
 from oauth2client.tools import run_flow
 
-from app.oauth import bp
+from app.auth import bp
 from app import db
-from app.models import User
+from app.api.models import User
 
 class OAuthSignIn(object):
     providers = None
