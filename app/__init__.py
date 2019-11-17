@@ -30,11 +30,15 @@ def create_app(config_class=Config):
     login.init_app(app)
 
     with app.app_context():
-        db.drop_all() # this is just dev
+        if config_class.FLASK_ENV == 'development':
+            db.drop_all() # this is just dev
         db.create_all()
 
     from app.auth import bp as auth_bp
     app.register_blueprint(auth_bp, url_prefix='/auth')
+
+    from app.oauth import bp as oauth_bp
+    app.register_blueprint(oauth_bp, url_prefix='/oauth')
 
     from app.main import bp as main_bp
     app.register_blueprint(main_bp)

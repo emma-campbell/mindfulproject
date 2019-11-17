@@ -21,7 +21,7 @@ def login():
 
         if user is None or not user.check_password(request.form['password']):
             flash('Invalid email or password.')
-            return redirect(url_for('auth.login'))
+            return redirect(url_for('.login'))
 
 
         login_user(user)
@@ -31,7 +31,7 @@ def login():
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('main.index')
         return redirect(next_page)
-    return render_template('auth/login.html', title='Welcome Back!', form=form, nav=True)
+    return render_template('login.html', title='Welcome Back!', form=form, nav=True)
 
 @bp.route('/logout')
 def logout():
@@ -62,7 +62,7 @@ def register():
         # TODO: New Set Up Profile module
         return redirect(url_for('main.index', nav=True))
 
-    return render_template('auth/register.html',
+    return render_template('register.html',
                            title='Register',
                            form=form,
                            nav=True)

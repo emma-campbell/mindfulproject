@@ -73,12 +73,10 @@
                             </div>
                         </div>
 
-                        <!-- Submit -->
-                        <div class="field">
+                        <div class="container has-text-centered">
                             <div class="control">
-                                <button class="button is-primary"
-                                        type="submit"
-                                        name="submit">
+                                <button class="button" name="google_login" href="{{ url_for( 'oauth.oauth_authorize', provider='google' ) }}">Google</button>
+                                <button class="button" type ="submit" name="submit">
                                     {{ form.submit.label }}
                                 </button>
                             </div>
