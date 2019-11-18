@@ -36,6 +36,11 @@ Run the following command to set up the required options!
 cp .env-example .env
 ```
 
+The last step before being able to run is generating your SSL certificate. Make sure you have openssl installed on your system and run the command
+```
+openssl req -x509 -newkey rsa:4096 -nodes -out cert.pem -keyout key.pem -days 365
+```
+
 Finally, run `flask run` and if everything is successful you should see the following:
 ```
 * Environment: production
