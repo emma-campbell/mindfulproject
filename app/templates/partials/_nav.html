@@ -1,5 +1,5 @@
 {% block nav %}
-<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+<nav class="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="{{ url_for('main.index') }}">
             <img class="image is-64x64"
@@ -27,12 +27,42 @@
                 </div>
             </div>
             {% else %}
-            <div class="navbar-item">
-                <span class="icon is-black">
-                    <i data-feather="book"></i>
+            <div class="navbar-link is-arrowless">
+                <span class="icon is-medium">
+                    <i class="fas fa-book"></i>
                 </span>
-                Journal
+                <span>Journal</span>
             </div>
+            <a class="navbar-link is-arrowless">
+                <span class="icon is-medium">
+                    <i class="fas fa-chart-line"></i>
+                </span>
+                <span>Track</span>
+            </a>
+
+            <div class="is-divider-vertical"></div>
+
+            <div class="navbar-item has-dropdown is-hoverable">
+
+                <a class="navbar-link">
+                    <span class="icon is-medium">
+                        <i class="fas fa-cogs"></i>
+                    </span>
+                </a>
+
+                <div class="navbar-dropdown is-right">
+                    <a class="navbar-item">
+                        <div class="container has-text-centered">
+                            <p class="is-link">Edit Profile</p>
+                        </div>
+                    </a>
+                    <hr class="navbar-divider">
+                    <div class="navbar-item">
+                        Log Out
+                    </div>
+                </div>
+            </div>
+
             {% endif %}
         </div>
     </div>

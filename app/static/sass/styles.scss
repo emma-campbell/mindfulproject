@@ -6,12 +6,6 @@
 $purple : #323260;
 $light-purple : #5E5E8F;
 $dark-purple : #161640;
-$green : #295E47;
-$light-green : #538C74;
-$dark-green : #0E3F2A;
-$blue : #2A4458;
-$light-blue : #526E84;
-$dark-blue : #10293B;
 $white: #F2F2ED;
 
 // Bulma Variables
@@ -54,3 +48,4 @@ p {
 }
 
 @import "../node_modules/bulma/bulma.sass";
+@import "../node_modules/bulma-extensions/src/sass/index.sass"

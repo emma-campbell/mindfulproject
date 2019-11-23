@@ -8,7 +8,7 @@ from app import db
 
 class UploadImage(FlaskForm):
 
-    img = FileField(u'Image File', validators=[Regecp(u'^[^/\\]\.jpg$')])
+    img = FileField('Image File', validators=[Regecp(u'^[^/\\]\.jpg$')])
     upload = SubmitField('Upload')
 
     def validate_image(form, field):
@@ -23,7 +23,7 @@ def upload(request):
 
 class Demographics(FlaskForm):
 
-    age = SelectField('Age', choices=[x for x in range(14,100)])
+    bday = DateField('Date of Birth')
     race = SelectField('Race', choices=['White', 'Black/African American', 'Hispanic or Latino American', 'Asian American', 'Native Hawaiian/Pacific Islander', 'Two or more races', 'Other', 'Do not wish to disclose'])
     gender = SelectField('Gender', choices=['Male', 'Female', 'Other', 'Do not wish to disclose'])
     orientation = SelectField('Sexual Orientation', choices=['Straight', 'Gay', 'Lesbian', 'Bisexual', 'Other', 'N/A or do not wish to disclose'])

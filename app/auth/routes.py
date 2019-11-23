@@ -20,7 +20,7 @@ def login():
         print (user)
 
         if user is None or not user.check_password(request.form['password']):
-            flash('Invalid email or password.')
+            flash('Invalid email or password.', 'danger')
             return redirect(url_for('.login'))
 
 
@@ -57,7 +57,7 @@ def register():
         db.session.add(user)
         db.session.commit()
 
-        flash('User {0} has been registered!'.format(user.id))
+        flash('User {0} has been registered!'.format(user.id), 'success')
 
         # TODO: New Set Up Profile module
         return redirect(url_for('main.index', nav=True))

@@ -13,10 +13,10 @@
 
         {% block notifications %}
         <div class="container has-text-centered">
-            {% with messages = get_flashed_messages() %}
+            {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
-            {% for message in messages %}
-            <div class="notification">
+            {% for category, message in messages %}
+            <div class="notification is-{{ category }}">
                 {{ message }}
             </div>
             {% endfor %}

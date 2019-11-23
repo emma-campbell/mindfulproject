@@ -98,7 +98,7 @@ def oauth_callback(provider):
     first, last, email = oauth.callback()
 
     if email is None:
-        flask('Authentication failed.')
+        flash('Authentication failed. Unable to retrieve credentials.', 'danger')
         return redirect(url_for('auth.register'))
 
     user = User.query.filter_by(email=email).first()
