@@ -1,9 +1,9 @@
 import click
-from flask import Flask
+from app import create_app
 from flask.cli import FlaskGroup
 
-from . import create_app
 
 @click.group(cls=FlaskGroup, create_app=create_app)
 def cli():
-    """Management script for mindful app."""
+    """Management script for mindful."""
+    pass
