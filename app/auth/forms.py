@@ -21,6 +21,7 @@ class RegistrationForm(FlaskForm):
     submit = SubmitField('Register')
 
     def validate_email(self, email):
-        user.User.query.filter_by(email=email).first()
+        """Validate that the inputed email does not match the email of a user already in our system."""
+        user = User.query.filter_by(email=email.data).first()
         if user is not None:
             raise ValidationError("That email is already in our system. Please use a different one.")

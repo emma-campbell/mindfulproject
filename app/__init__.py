@@ -51,3 +51,4 @@ def create_app(config_class=Config):
     return app
 
 from app.api import models
+import email
