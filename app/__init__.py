@@ -9,6 +9,7 @@ import os
 from flask import Flask
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
+from flask_mail import Mail
 from config import Config
 
 basedir = os.path.abspath(__file__)
@@ -19,6 +20,9 @@ db = SQLAlchemy()
 # login manager
 login = LoginManager()
 
+# Email manager for sending account creation confirmations
+mail = Mail()
+
 def create_app(config_class=Config):
     '''
     Create a new instance of the application
@@ -28,6 +32,7 @@ def create_app(config_class=Config):
 
     db.init_app(app)
     login.init_app(app)
+    mail.init_app(app)
 
     with app.app_context():
         if config_class.FLASK_ENV == 'development':

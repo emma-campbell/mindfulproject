@@ -36,33 +36,40 @@ def login():
 @bp.route('/logout')
 def logout():
     logout_user()
-    return redirect('main.index')
+    return redirect(url_for('main.index'))
 
 @bp.route('/register', methods=['GET', 'POST'])
 def register():
-
+    """Register a new user"""
     if current_user.is_authenticated:
         return redirect(url_for(main.index))
 
     form = RegistrationForm()
 
     if request.method == 'POST':
+        if form.validate_on_submit():
+            user = User(first=request.form['first'],
+                        last=request.form['last'],
+                        email=request.form['email'])
 
-        user = User(first=request.form['first'],
-                    last=request.form['last'],
-                    email=request.form['email'])
+            user.set_password(request.form['password'])
 
-        user.set_password(request.form['password'])
+            db.session.add(user)
+            db.session.commit()
 
-        db.session.add(user)
-        db.session.commit()
-
-        flash('User {0} has been registered!'.format(user.id), 'success')
-
-        # TODO: New Set Up Profile module
-        return redirect(url_for('main.index', nav=True))
-
+            # TODO: New Set Up Profile module
+            return redirect(url_for('main.index', nav=True))
+        else:
+            flash('That email is taken! Please chose a different one.', 'danger')
+            return redirect(url_for('auth.register'))
     return render_template('register.html',
                            title='Register',
                            form=form,
                            nav=True)
+
+@bp.route('/reset_password_request', methods=['GET', 'POST'])
+def reset_password_request():
+    # TODO: Password reset
+    # if current_user.is_authenticated:
+    #     return redirect(url_for('main.index'))
+    pass
