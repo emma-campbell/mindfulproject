@@ -80,8 +80,6 @@ class GoogleSignIn(OAuthSignIn):
         )
 
         me = oauth_session.get('?fields=name,email').json()
-        print (me['name'])
-        print (me['email'])
         names = me['name'].split(" ")
         return (names[0], names[1], me['email'])
 

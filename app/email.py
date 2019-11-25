@@ -39,4 +39,4 @@ def send_confirmation_email(user_email):
     txt  = render_template('email/confirmation.txt', confirm_url=confirm_url)
     html = render_template('email/confirmation.html', confirm_url=confirm_url)
 
-    send_email("Welcome to Mindful [PLEASE CONFIRM YOUR EMAIL]", user_email,txt,  html)
+    send_email("Welcome to Mindful (Please confirm your email!)", user_email,txt,  html)
