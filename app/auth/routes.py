@@ -58,7 +58,7 @@ def register():
             return redirect(url_for('main.index', nav=True))
         except IntegrityError:
             db.session.rollback()
-            flash('Email address ({0}) is already in our system. Please choose a different one.', 'danger')
+            flash('Email address is already in our system. Please choose a different one.', 'danger')
             return redirect(url_for('auth.register'))
     return render_template('register.html', title='Register',form=form, nav=True)
 
