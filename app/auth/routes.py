@@ -11,7 +11,7 @@ from app.email import send_confirmation_email
 @bp.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for(main.index))
+        return redirect(url_for('main.index'))
     form = LoginForm()
     if request.method == "POST":
         user = User.query.filter_by(email=request.form['email']).first()

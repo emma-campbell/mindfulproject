@@ -82,13 +82,12 @@
 
                     <div class="is-divider" data-content="OR"></div>
                         <div class="control">
-                            <button class="button is-link" name="google_login" href="{{ url_for( 'auth.oauth_authorize', provider='google' ) }}">
-
+                            <a class="button is-link" name="google_login" href="{{ url_for( 'auth.oauth_authorize', provider='google' ) }}">
                                 <span class="icon">
                                     <img class="image is-32x32" src="{{ url_for('static', filename='imgs/btn_google_light_normal_ios.svg' ) }}">
                                 </span>
                                 <span class="is-size-6">Google</span>
-                            </button>
+                            </a>
                         </div>
                 </div>
         </div>

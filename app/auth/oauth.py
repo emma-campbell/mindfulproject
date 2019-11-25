@@ -8,7 +8,7 @@ import json
 import urllib.request as urllib
 
 from rauth import OAuth1Service, OAuth2Service
-from flask import current_app, url_for, request, redirect, session
+from flask import current_app, url_for, request, redirect, session, flash
 from flask_login import current_user, login_user
 
 from oauth2client.client import flow_from_clientsecrets
@@ -17,6 +17,7 @@ from oauth2client.tools import run_flow
 
 from app.auth import bp
 from app import db
+from app.email import send_confirmation_email
 from app.api.models import User
 
 class OAuthSignIn(object):
@@ -79,9 +80,8 @@ class GoogleSignIn(OAuthSignIn):
             decoder= json.loads
         )
 
-        me = oauth_session.get('?fields=name,email').json()
-        names = me['name'].split(" ")
-        return (names[0], names[1], me['email'])
+        me = oauth_session.get('').json()
+        return (me['name'], me['email'])
 
 @bp.route('/<provider>')
 def oauth_authorize(provider):
@@ -95,7 +95,9 @@ def oauth_callback(provider):
     if not current_user.is_anonymous:
         return redirect(url_for('main.index'))
     oauth = OAuthSignIn.get_provider(provider)
-    first, last, email = oauth.callback()
+    name , email = oauth.callback()
+
+    print("{0} {1}\n".format(name, email))
 
     if email is None:
         flash('Authentication failed. Unable to retrieve credentials.', 'danger')
@@ -103,9 +105,20 @@ def oauth_callback(provider):
 
     user = User.query.filter_by(email=email).first()
     if not user:
+
+        name = name.split(" ")
+        first = name[0]
+        last = name[1]
         user = User(first=first, last=last, email=email)
+
         db.session.add(user)
         db.session.commit()
 
-    login_user(user, remember=True)
+        flash('User <{0}:{1}> has been registered!'.format(email, user.id), 'success')
+
+        send_confirmation_email(email)
+        return redirect(url_for('main.index'))
+    else:
+        login_user(user, remember=True)
+
     return redirect(url_for('main.index'))
