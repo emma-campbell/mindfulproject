@@ -21,5 +21,5 @@ def index():
 @login_required
 def unconfirmed():
     if current_user.confirmed:
-        return redirect('main.index')
+        return redirect(url_for('main.index'))
     return render_template('unconfirmed.html')

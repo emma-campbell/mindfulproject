@@ -41,7 +41,7 @@ def logout():
 def register():
     """Register a new user"""
     if current_user.is_authenticated:
-        return redirect(url_for(main.index))
+        return redirect(url_for('main.index'))
 
     form = RegistrationForm()
 
