@@ -114,11 +114,10 @@ def oauth_callback(provider):
         db.session.add(user)
         db.session.commit()
 
-        flash('User <{0}:{1}> has been registered!'.format(email, user.id), 'success')
+        flash('User <{0}> has been registered!'.format(email, user.id), 'success')
 
         send_confirmation_email(email)
-        return redirect(url_for('main.index'))
     else:
         login_user(user, remember=True)
 
-    return redirect(url_for('main.index'))
+    return redirect(url_for('main.unconfirmed'))

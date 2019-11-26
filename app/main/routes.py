@@ -16,3 +16,10 @@ def before_request():
 @bp.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('index.html', nav=True)
+
+@bp.route('/unconfirmed')
+@login_required
+def unconfirmed():
+    if current_user.confirmed:
+        return redirect('main.index')
+    return render_template('unconfirmed.html')

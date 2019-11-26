@@ -12,6 +12,7 @@ load_dotenv(os.path.join(basedir, '.env'))
 class Config(object):
 
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
+    SECURITY_PASSWORD_SALT = os.environ.get('SECURITY') or 'this-is-a-password'
     FLASK_ENV = os.environ.get('FLASK_ENV') or 'development'
     SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI') or \
         "sqlite:///{}".format(os.path.join(basedir, 'app.db'))

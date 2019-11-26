@@ -1,11 +1,11 @@
-import time
-from threading import Thread
 from flask import current_app, url_for, render_template
 from flask_mail import Message
-from app import mail
-from config import Config
-from itsdangerous import URLSafeTimedSerializer
 
+from app import mail
+from app.api.tokens import generate_confirmation_token
+from config import Config
+
+# building the server to send the email on
 import smtplib, ssl
 from smtplib import SMTPAuthenticationError
 from email.mime.text import MIMEText
@@ -29,14 +29,15 @@ def send_email(subject, to, txt, html):
         )
 
 def send_confirmation_email(user_email):
-    confirm_serializer = URLSafeTimedSerializer(Config.SECRET_KEY)
 
+    token = generate_confirmation_token(user_email)
     confirm_url = url_for(
         'auth.confirm_email',
-        token=confirm_serializer.dumps(user_email, salt='email-confirmation-salt'),
-        _external=True)
+        token=token,
+        _external=True,
+    )
 
     txt  = render_template('email/confirmation.txt', confirm_url=confirm_url)
     html = render_template('email/confirmation.html', confirm_url=confirm_url)
 
-    send_email("Welcome to Mindful (Please confirm your email!)", user_email,txt,  html)
+    send_email("Welcome to Mindful (Please confirm your email!)", user_email, txt, html)
