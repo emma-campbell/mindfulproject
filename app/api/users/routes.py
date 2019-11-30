@@ -6,10 +6,6 @@ from app.api import bp
 from app.api.auth import token_auth
 from app.api.errors import bad_request
 
-@login.user_loader
-def load_user(id):
-    return User.query.get(int(id))
-
 @bp.route('/users/<int:id>', methods=['GET'])
 def get_user(id):
     return jsonify(User.query.get_or_404(id).to_dict())
