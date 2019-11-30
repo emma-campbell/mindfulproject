@@ -4,7 +4,7 @@ from sqlalchemy.exc import IntegrityError
 from datetime import datetime
 
 from app import db
-from app.api.models import User
+from app.api.users import User
 from app.api.tokens import confirm_token
 from app.auth import bp
 from app.auth.forms import LoginForm, RegistrationForm

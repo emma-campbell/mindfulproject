@@ -18,7 +18,7 @@ from oauth2client.tools import run_flow
 from app.auth import bp
 from app import db
 from app.email import send_confirmation_email
-from app.api.models import User
+from app.api.users import User
 
 from config import Config
 

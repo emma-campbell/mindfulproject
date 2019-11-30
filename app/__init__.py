@@ -28,7 +28,6 @@ login = LoginManager()
 mail = Mail()
 
 def create_app(config_class=Config):
-
     '''
     Create a new instance of the application
     '''
@@ -56,4 +55,4 @@ def create_app(config_class=Config):
 
     return app
 
-from app.api import models
+from app.api.users import User, routes
