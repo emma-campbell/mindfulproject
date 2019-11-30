@@ -75,11 +75,11 @@ class GoogleSignIn(OAuthSignIn):
             return None, None, None
         oauth_session = self.service.get_auth_session(
             data={
-                'code' : request.args['code'],
-                'grant_type' : 'authorization_code',
-                'redirect_uri' : self.get_callback_url()
+                'code': request.args['code'],
+                'grant_type': 'authorization_code',
+                'redirect_uri': self.get_callback_url()
             },
-            decoder= json.loads
+            decoder=json.loads
         )
 
         me = oauth_session.get('').json()
@@ -106,6 +106,7 @@ def oauth_callback(provider):
         return redirect(url_for('auth.register'))
 
     user = User.query.filter_by(email=email).first()
+
     if not user:
 
         name = name.split(" ")
@@ -113,16 +114,12 @@ def oauth_callback(provider):
         last = name[1]
         user = User(first=first, last=last, email=email)
 
-        if Config.FLASK_ENV == 'development':
-            user.confirmed = True
-        else:
-            send_confirmation_email(email)
-
         db.session.add(user)
         db.session.commit()
 
         flash('User <{0}> has been registered!'.format(email, user.id), 'success')
 
+        send_confirmation_email(email)
 
     login_user(user, remember=True)
     return redirect(url_for('main.unconfirmed'))

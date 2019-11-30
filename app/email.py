@@ -3,6 +3,7 @@ from flask_mail import Message
 
 from app import mail
 from app.api.tokens import generate_confirmation_token
+from app.api.users import User
 from config import Config
 
 # building the server to send the email on
@@ -41,3 +42,17 @@ def send_confirmation_email(user_email):
     html = render_template('email/confirmation.html', confirm_url=confirm_url)
 
     send_email("Welcome to Mindful (Please confirm your email!)", user_email, txt, html)
+
+def send_password_reset_email(user):
+
+    token = user.get_reset_password_token()
+    reset_url = url_for(
+        'auth.reset_password',
+        token=token,
+        _external=True,
+    )
+
+    txt = render_template('email/reset_password.txt', reset_url=reset_url, user=user)
+    html = render_template('email/reset_password.html', reset_url=reset_url, user=user)
+
+    send_email('[Mindful] Reset Your Password', user.email, txt, html)
