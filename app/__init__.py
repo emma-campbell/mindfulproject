@@ -28,6 +28,7 @@ login = LoginManager()
 mail = Mail()
 
 def create_app(config_class=Config):
+
     '''
     Create a new instance of the application
     '''
@@ -36,12 +37,13 @@ def create_app(config_class=Config):
 
     db.init_app(app)
     login.init_app(app)
-    mail.init_app(app)
 
-    with app.app_context():
-        if config_class.FLASK_ENV == 'development':
-            db.drop_all() # this is just dev
-        db.create_all()
+    if config_class.FLASK_ENV == 'development':
+        with app.app_context():
+            db.drop_all()
+            db.create_all()
+    else:
+        mail.init_app(app)
 
     from app.auth import bp as auth_bp
     app.register_blueprint(auth_bp, url_prefix='/auth')
