@@ -18,7 +18,9 @@ from oauth2client.tools import run_flow
 from app.auth import bp
 from app import db
 from app.email import send_confirmation_email
-from app.api.models import User
+from app.api.users import User
+
+from config import Config
 
 class OAuthSignIn(object):
     providers = None
@@ -111,13 +113,16 @@ def oauth_callback(provider):
         last = name[1]
         user = User(first=first, last=last, email=email)
 
+        if Config.FLASK_ENV == 'development':
+            user.confirmed = True
+        else:
+            send_confirmation_email(email)
+
         db.session.add(user)
         db.session.commit()
 
         flash('User <{0}> has been registered!'.format(email, user.id), 'success')
 
-        send_confirmation_email(email)
-    else:
-        login_user(user, remember=True)
 
+    login_user(user, remember=True)
     return redirect(url_for('main.unconfirmed'))

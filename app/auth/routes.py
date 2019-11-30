@@ -4,7 +4,7 @@ from sqlalchemy.exc import IntegrityError
 from datetime import datetime
 
 from app import db
-from app.api.models import User
+from app.api.users import User
 from app.api.tokens import confirm_token
 from app.auth import bp
 from app.auth.forms import LoginForm, RegistrationForm
@@ -52,14 +52,21 @@ def register():
                         email=request.form['email'])
 
             user.set_password(request.form['password'])
+
+            if Config.FLASK_ENV == 'development':
+                user.confirmed = True
+            else:
+                send_confirmation_email(email)
+
             db.session.add(user)
             db.session.commit()
 
-            # TODO: add email confirmation
-            send_confirmation_email(user.email)
-            flash('User registered! Please check your email, you should get a confirmation message within 5 minutes!')
+            flash('User registered! Please check your email, you should get a ' +
+                  'confirmation message within 5 minutes!')
+
             # TODO: New Set Up Profile module
             return redirect(url_for('main.unconfirmed', nav=True))
+
         except IntegrityError:
             db.session.rollback()
             flash('Email address is already in our system. Please choose a different one.', 'danger')
