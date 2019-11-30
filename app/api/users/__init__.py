@@ -104,3 +104,7 @@ class User(UserMixin, db.Model):
         if user is None or user.token_expiration < datetime.utcnow():
             return None
         return user
+
+@login.user_loader
+def get_user(id):
+    return User.query.filter_by(id=id).first()
