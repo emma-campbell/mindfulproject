@@ -7,8 +7,8 @@ from app import db
 from app.api.users import User
 from app.api.tokens import confirm_token
 from app.auth import bp
-from app.auth.forms import LoginForm, RegistrationForm
-from app.email import send_confirmation_email
+from app.auth.forms import LoginForm, RegistrationForm, ResetPasswordRequestForm, ResetPasswordForm
+from app.email import send_confirmation_email, send_password_reset_email
 
 from config import Config
 
@@ -53,14 +53,10 @@ def register():
 
             user.set_password(request.form['password'])
 
-            if Config.FLASK_ENV == 'development':
-                user.confirmed = True
-            else:
-                send_confirmation_email(email)
-
             db.session.add(user)
             db.session.commit()
 
+            send_confirmation_email(user.email)
             flash('User registered! Please check your email, you should get a ' +
                   'confirmation message within 5 minutes!')
 
@@ -75,10 +71,37 @@ def register():
 
 @bp.route('/reset_password_request', methods=['GET', 'POST'])
 def reset_password_request():
-    # TODO: Password reset
-    # if current_user.is_authenticated:
-    #     return redirect(url_for('main.index'))
-    pass
+    if current_user.is_authenticated:
+        return redirect(url_for('main.index'))
+    form = ResetPasswordRequestForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=request.form['email']).first()
+        if user is None:
+            flash('Email not found.', 'danger')
+            return redirect(url_for('.reset_password_request'))
+
+        send_password_reset_email(user)
+        flash('Check your email for instructions to reset your password.')
+        return redirect(url_for('.login'))
+    return render_template('reset_password_request.html',
+                           title='Reset Password', form=form)
+
+
+@bp.route('/reset_password/<token>', methods=['GET', 'POST'])
+def reset_password(token):
+    if current_user.is_authenticated:
+        return redirect(url_for('main.index'))
+    user = User.verify_reset_password_token(token)
+    if not user:
+        print("Second")
+        return redirect(url_for('main.index'))
+    form = ResetPasswordForm()
+    if form.validate_on_submit():
+        user.set_password(request.form['password'])
+        db.session.commit()
+        flash('Your password has been reset!', 'success')
+        return redirect(url_for('.login'))
+    return render_template('reset_password.html', form=form)
 
 @bp.route('/confirm/<token>')
 def confirm_email(token):
