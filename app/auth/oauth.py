@@ -106,6 +106,7 @@ def oauth_callback(provider):
         return redirect(url_for('auth.register'))
 
     user = User.query.filter_by(email=email).first()
+
     if not user:
 
         name = name.split(" ")
@@ -119,8 +120,6 @@ def oauth_callback(provider):
         flash('User <{0}> has been registered!'.format(email, user.id), 'success')
 
         send_confirmation_email(email)
-    else:
-        login_user(user, remember=True)
 
     login_user(user, remember=True)
     return redirect(url_for('main.unconfirmed'))

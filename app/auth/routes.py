@@ -60,8 +60,10 @@ def register():
             flash('User registered! Please check your email, you should get a ' +
                   'confirmation message within 5 minutes!')
 
+            login_user(user, remember=True)
             # TODO: New Set Up Profile module
-            return redirect(url_for('main.unconfirmed', nav=True))
+            return redirect(url_for('main.unconfirmed'))
+
 
         except IntegrityError:
             db.session.rollback()
