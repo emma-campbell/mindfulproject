@@ -25,16 +25,7 @@ def create_app(config_object=ProdConfig):
     register_shellcontext(app)
     register_commands(app)
 
-    with app.app_context():
-
-        if app.config['FLASK_ENV'] == 'development' or \
-           app.config['FLASK_ENV'] == 'testing':
-            db.drop_all()
-
-        db.create_all()
-
-
-        return app
+    return app
 
 def register_extensions(app):
     """Register all application extensions"""
