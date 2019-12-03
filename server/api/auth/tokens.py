@@ -3,7 +3,7 @@ from flask import jsonify, g
 from .. import api
 from ..users.model import User
 
-import basic_auth, token_auth
+from . import basic_auth, token_auth
 
 @api.route('/tokens', methods=['POST'])
 @basic_auth.login_required
@@ -13,7 +13,7 @@ def get_token():
     return jsonify({'token' : token })
 
 
-@api.route('/tokens', method=['DELETE'])
+@api.route('/tokens', methods=['DELETE'])
 @token_auth.login_required
 def revoke_token():
     g.current_user.revoke_token()

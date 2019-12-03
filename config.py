@@ -41,6 +41,7 @@ class ProdConfig(Config):
 
     ENV = 'prod'
     DEBUG = False
+    TESTING = False
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', 'postgresql://localhost/example')
 
 class DevConfig(Config):
@@ -51,6 +52,7 @@ class DevConfig(Config):
     DB_NAME = 'app.db'
     DB_PATH = os.path.join(Config.PROJECT_ROOT, DB_NAME)
     SQLALCHEMY_DATABASE_URI = 'sqlite:///{0}'.format(DB_PATH)
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 
 class TestConfig(Config):
@@ -59,3 +61,6 @@ class TestConfig(Config):
     TESTING = True
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = 'sqlite://'
+
+class StagingConfig(Config):
+    DEBUG = True

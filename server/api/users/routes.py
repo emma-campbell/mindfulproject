@@ -1,5 +1,5 @@
 from flask import jsonify, request, url_for, g, abort
-from application.api import api
+from server.api import api
 
 @api.route('/users/<int:id>', methods=['GET', 'POST'])
 def get_user(id):

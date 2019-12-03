@@ -1,0 +1,9 @@
+{
+  "name": "mindfulproject",
+  "version": "1.0.0",
+  "description": "Application to track symptoms, journal, and develop healthier habits",
+  "main": "index.js",
+  "repository": "https://github.com/emma-campbell/mindfulproject.git",
+  "author": "Emma Campbell <ecampb10@u.rochester.edu>",
+  "license": "MIT"
+}
