@@ -1,14 +1,14 @@
 from flask import request
 from flask_wtf import FlaskForm
-from wtforms import StringField, IntegerField, SubmitField, FileField
-from wtforms.validators import DataRequired, ValidationError, Email
+from wtforms import StringField, IntegerField, SubmitField, FileField, TextAreaField, DateField, SelectField
+from wtforms.validators import DataRequired, ValidationError, Email, Regexp
 
-from app.models import User
+from app.api.users import User
 from app import db
 
 class UploadImage(FlaskForm):
 
-    img = FileField('Image File', validators=[Regecp(u'^[^/\\]\.jpg$')])
+    img = FileField('Image File', validators=[Regexp(u'^[^/\\\\]\.jpg$')])
     upload = SubmitField('Upload')
 
     def validate_image(form, field):
@@ -29,3 +29,10 @@ class Demographics(FlaskForm):
     orientation = SelectField('Sexual Orientation', choices=['Straight', 'Gay', 'Lesbian', 'Bisexual', 'Other', 'N/A or do not wish to disclose'])
 
     condition = SelectField('Have you been diagnosed with a psychiatric illness?', choices=['Yes', 'No'])
+
+class JournalForm(FlaskForm):
+
+    title = StringField('Title', validators=[DataRequired()])
+    entry = TextAreaField('Entry', validators=[DataRequired()])
+    save = SubmitField('Save')
+    cancel = SubmitField('Cancel')

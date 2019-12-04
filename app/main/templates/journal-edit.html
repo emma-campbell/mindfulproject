@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section class="hero is-fullheight gradient">
+    <div class="container has-text-centered" id="panel-container">
+        <div class="panel is-primary">
+
+            <div class="panel-heading">
+                Edit Entry
+            </div>
+
+            <div class="container has-text-left" id="form">
+                <form action="" method="POST">
+                    {{ form.hidden_tag() }}
+                    <div class="field">
+                        <div class="control">
+                            <label class="label">
+                                {{ form.title.label }}
+                            </label>
+                            <p>
+                                {{ form.title(class="input",
+                                   type="text",
+                                   size=64) }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">
+                            {{ form.entry.label }}
+                        </label>
+                        <p>
+                             {{ form.entry(class="textarea",rows="10") }}
+                        </p>
+                    </div>
+                    <div class="field is-grouped is-grouped-right">
+                        <div class="control">
+                            <div class="buttons">
+                                    <p>
+                                        {{ form.cancel(class="button",type="submit") }}
+                                    </p>
+                                </div>
+                        </div>
+                        <div class="control">
+                           <div class="buttons">
+                                    <p>
+                                        {{ form.save(class="button is-success",type="submit") }}
+                                    </p>
+                                </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </section>
+{% endblock %}

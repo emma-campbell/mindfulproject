@@ -30,6 +30,7 @@ class User(UserMixin, db.Model):
     _links = {
         "self" : "/api/users/{0}".format(id)
     }
+    journals = db.relationship('Journal', backref='user', lazy='dynamic')
 
     def __repr__(self):
         return '< USER /api/users/{0} >'.format(self.id)
