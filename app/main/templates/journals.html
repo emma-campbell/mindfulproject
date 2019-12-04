@@ -63,49 +63,11 @@
                                       </div>
                                       <div class="level-item">
                                           <!--Delete Button-->
-                                          <a id='modal-button' data-toggle="modal" data-target="#modal">
+                                          <a class='modal-button' data-toggle="modal" data-target=#{{ entry.id }} >
                                                <span class="icon is-small">
                                                     <i class="far fa-trash-alt"></i>
                                                </span>
                                           </a>
-                                          <!--Modal-->
-                                          <div class="modal" id="modal">
-                                              <div class="modal-background"></div>
-                                              <div class="modal-card">
-                                                 <header class="modal-card-head is-primary">
-                                                      <p class="modal-card-title">Confirm Delete</p>
-                                                      <button class="delete" id="delete" data-dismiss="modal" aria-label="close"></button>
-                                                 </header>
-                                                  <section class="modal-card-body">
-                                                      <div class="content has-text-centered">
-                                                          <br>
-                                                            <p class="subtitle">Are you sure you want to delete your entry?</p>
-                                                          <br>
-                                                      </div>
-                                                  </section>
-                                                  <footer class="modal-card-foot">
-                                                      <a class="button is-success" href="{{ url_for('.journal_delete', entry_id=entry.id) }}">Yes</a>
-                                                      <button class="button" id="no">No</button>
-                                                  </footer>
-                                              </div>
-                                          </div>
-                                          <!--JS for Modal-->
-                                          <script>
-                                              $("#modal-button").click(function() {
-                                                  var target = $(this).data("target");
-                                                  $("html").addClass("is-clipped");
-                                                  $(target).addClass("is-active");
-                                                });
-
-                                              $('#no').click(function() {
-                                                  $("html").removeClass("is-clipped");
-                                                  $(".modal").removeClass("is-active");
-                                                });
-                                              $('#delete').click(function() {
-                                                  $("html").removeClass("is-clipped");
-                                                  $(".modal").removeClass("is-active");
-                                                });
-                                          </script>
                                       </div>
                                   </div>
                                 </nav>
@@ -113,6 +75,43 @@
                                     <p>{{ entry.entry}} </p>
                                 </div>
                             </article>
+                            <!--Modal-->
+                            <div class="modal" id={{ entry.id }}>
+                                <div class="modal-background"></div>
+                                <div class="modal-card">
+                                    <header class="modal-card-head is-primary">
+                                        <p class="modal-card-title">Confirm Delete</p>
+                                        <button class="delete" data-dismiss="modal" aria-label="close"></button>
+                                    </header>
+                                    <section class="modal-card-body">
+                                        <div class="content has-text-centered">
+                                            <br>
+                                            <p class="subtitle">Are you sure you want to delete your entry?</p>
+                                            <br>
+                                        </div>
+                                    </section>
+                                    <footer class="modal-card-foot">
+                                        <a class="button is-success" href="{{ url_for('.journal_delete', entry_id=entry.id) }}">Yes</a>
+                                        <button class="button">No</button>
+                                    </footer>
+                                </div>
+                            </div>
+                            <!--JS for Modal-->
+                            <script>
+                                $(".modal-button").click(function() {
+                                    var target = $(this).data("target");
+                                    $("html").addClass("is-clipped");
+                                    $(target).addClass("is-active");
+                                });
+                                $('.button').click(function() {
+                                    $("html").removeClass("is-clipped");
+                                    $(".modal").removeClass("is-active");
+                                });
+                                $('.delete').click(function() {
+                                    $("html").removeClass("is-clipped");
+                                    $(".modal").removeClass("is-active");
+                                });
+                            </script>
                             {% endfor %}
                         </div>
 
@@ -138,49 +137,11 @@
                                       </div>
                                       <div class="level-item">
                                           <!--Delete Button-->
-                                          <a id='modal-button2' data-toggle="modal" data-target="#modal">
+                                          <a class='modal-button' data-toggle="modal" data-target=#{{ entry.id }} >
                                                <span class="icon is-small">
                                                     <i class="far fa-trash-alt"></i>
                                                </span>
                                           </a>
-                                          <!--Modal-->
-                                          <div class="modal" id="modal2">
-                                              <div class="modal-background"></div>
-                                              <div class="modal-card">
-                                                 <header class="modal-card-head is-primary">
-                                                      <p class="modal-card-title">Confirm Delete</p>
-                                                      <button class="delete" id="delete2" data-dismiss="modal" aria-label="close"></button>
-                                                 </header>
-                                                  <section class="modal-card-body">
-                                                      <div class="content has-text-centered">
-                                                          <br>
-                                                            <p class="subtitle">Are you sure you want to delete your entry?</p>
-                                                          <br>
-                                                      </div>
-                                                  </section>
-                                                  <footer class="modal-card-foot">
-                                                      <a class="button is-success" href="{{ url_for('.journal_delete', entry_id=entry.id) }}">Yes</a>
-                                                      <button class="button" id="no2">No</button>
-                                                  </footer>
-                                              </div>
-                                          </div>
-                                          <!--JS for Modal-->
-                                          <script>
-                                              $("#modal-button2").click(function() {
-                                                  var target = $(this).data("target");
-                                                  $("html").addClass("is-clipped");
-                                                  $(target).addClass("is-active");
-                                                });
-
-                                              $('#no2').click(function() {
-                                                  $("html").removeClass("is-clipped");
-                                                  $(".modal").removeClass("is-active");
-                                                });
-                                              $('#delete2').click(function() {
-                                                  $("html").removeClass("is-clipped");
-                                                  $(".modal").removeClass("is-active");
-                                                });
-                                          </script>
                                       </div>
                                   </div>
                                 </nav>
@@ -188,10 +149,47 @@
                                     <p>{{ entry.entry}} </p>
                                 </div>
                             </article>
+                            <!--Modal-->
+                            <div class="modal" id={{ entry.id }}>
+                                <div class="modal-background"></div>
+                                <div class="modal-card">
+                                    <header class="modal-card-head is-primary">
+                                        <p class="modal-card-title">Confirm Delete</p>
+                                        <button class="delete" data-dismiss="modal" aria-label="close"></button>
+                                    </header>
+                                    <section class="modal-card-body">
+                                        <div class="content has-text-centered">
+                                            <br>
+                                            <p class="subtitle">Are you sure you want to delete your entry?</p>
+                                            <br>
+                                        </div>
+                                    </section>
+                                    <footer class="modal-card-foot">
+                                        <a class="button is-success" href="{{ url_for('.journal_delete', entry_id=entry.id) }}">Yes</a>
+                                        <button class="button">No</button>
+                                    </footer>
+                                </div>
+                            </div>
+                            <!--JS for Modal-->
+                            <script>
+                                $(".modal-button").click(function() {
+                                    var target = $(this).data("target");
+                                    $("html").addClass("is-clipped");
+                                    $(target).addClass("is-active");
+                                });
+                                $('.button').click(function() {
+                                    $("html").removeClass("is-clipped");
+                                    $(".modal").removeClass("is-active");
+                                });
+                                $('.delete').click(function() {
+                                    $("html").removeClass("is-clipped");
+                                    $(".modal").removeClass("is-active");
+                                });
+                            </script>
                             {% endfor %}
                         </div>
 
-                        <!--Column 3-->
+                       <!--Column 3-->
                         <div class="tile is-parent is-4 is-vertical">
                             {% for entry in third %}
                             <article class="tile is-child box">
@@ -213,49 +211,11 @@
                                       </div>
                                       <div class="level-item">
                                           <!--Delete Button-->
-                                          <a id='modal-button3' data-toggle="modal" data-target="#modal">
+                                          <a class='modal-button' data-toggle="modal" data-target=#{{ entry.id }} >
                                                <span class="icon is-small">
                                                     <i class="far fa-trash-alt"></i>
                                                </span>
                                           </a>
-                                          <!--Modal-->
-                                          <div class="modal" id="modal3">
-                                              <div class="modal-background"></div>
-                                              <div class="modal-card">
-                                                 <header class="modal-card-head is-primary">
-                                                      <p class="modal-card-title">Confirm Delete</p>
-                                                      <button class="delete" id="delete3" data-dismiss="modal" aria-label="close"></button>
-                                                 </header>
-                                                  <section class="modal-card-body">
-                                                      <div class="content has-text-centered">
-                                                          <br>
-                                                            <p class="subtitle">Are you sure you want to delete your entry?</p>
-                                                          <br>
-                                                      </div>
-                                                  </section>
-                                                  <footer class="modal-card-foot">
-                                                      <a class="button is-success" href="{{ url_for('.journal_delete', entry_id=entry.id) }}">Yes</a>
-                                                      <button class="button" id="no3">No</button>
-                                                  </footer>
-                                              </div>
-                                          </div>
-                                          <!--JS for Modal-->
-                                          <script>
-                                              $("#modal-button3").click(function() {
-                                                  var target = $(this).data("target");
-                                                  $("html").addClass("is-clipped");
-                                                  $(target).addClass("is-active");
-                                                });
-
-                                              $('#no3').click(function() {
-                                                  $("html").removeClass("is-clipped");
-                                                  $(".modal").removeClass("is-active");
-                                                });
-                                              $('#delete3').click(function() {
-                                                  $("html").removeClass("is-clipped");
-                                                  $(".modal").removeClass("is-active");
-                                                });
-                                          </script>
                                       </div>
                                   </div>
                                 </nav>
@@ -263,6 +223,43 @@
                                     <p>{{ entry.entry}} </p>
                                 </div>
                             </article>
+                            <!--Modal-->
+                            <div class="modal" id={{ entry.id }}>
+                                <div class="modal-background"></div>
+                                <div class="modal-card">
+                                    <header class="modal-card-head is-primary">
+                                        <p class="modal-card-title">Confirm Delete</p>
+                                        <button class="delete" data-dismiss="modal" aria-label="close"></button>
+                                    </header>
+                                    <section class="modal-card-body">
+                                        <div class="content has-text-centered">
+                                            <br>
+                                            <p class="subtitle">Are you sure you want to delete your entry?</p>
+                                            <br>
+                                        </div>
+                                    </section>
+                                    <footer class="modal-card-foot">
+                                        <a class="button is-success" href="{{ url_for('.journal_delete', entry_id=entry.id) }}">Yes</a>
+                                        <button class="button">No</button>
+                                    </footer>
+                                </div>
+                            </div>
+                            <!--JS for Modal-->
+                            <script>
+                                $(".modal-button").click(function() {
+                                    var target = $(this).data("target");
+                                    $("html").addClass("is-clipped");
+                                    $(target).addClass("is-active");
+                                });
+                                $('.button').click(function() {
+                                    $("html").removeClass("is-clipped");
+                                    $(".modal").removeClass("is-active");
+                                });
+                                $('.delete').click(function() {
+                                    $("html").removeClass("is-clipped");
+                                    $(".modal").removeClass("is-active");
+                                });
+                            </script>
                             {% endfor %}
                         </div>
                     </div>
