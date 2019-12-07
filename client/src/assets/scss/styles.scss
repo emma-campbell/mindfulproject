@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis|Open+Sans&display=swap');
+
+$purple: #8C00B6;
+$purple-2: #BD00ED;
+$purple-3: #D855FF;
+$purple-4: #D584FF;
+$purple-5: #E7BAFF;
+$purple-6: #2E0041;
+
+$primary: $purple;
+
+$family-sans-serif: 'Open Sans', sans-serif;
+$body-background-color: $purple-4;
+
+.gradient {
+    background-image: linear-gradient(to bottom right, $purple-4, $purple)
+}
+
+.title {
+    font-family: 'Dosis', sans-serif;
+}
+@import "bulma";
+@import "buefy/src/scss/buefy";
+@import "bulma-divider/src/sass/index.sass"

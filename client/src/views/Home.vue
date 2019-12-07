@@ -1,10 +1,15 @@
 <template>
-  <div id="home">
+<div class="gradient" id="home">
     <header>
       <Nav/>
     </header>
-
-    <p>Hello</p>
+    <section class="hero is-fullheight gradient">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title"> Placeholder </h1>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
