@@ -1,5 +1,5 @@
 <template>
-  <b-navbar class="navbar is-transparent" id="nav">
+  <b-navbar class="navbar gradient-dark" id="nav">
     <template slot="brand">
      <b-navbar-item tag="router-link" :to="{ path : '/' }">
        <img class="image" id="logo" src="@/assets/logo-sm.png">
@@ -11,7 +11,7 @@
     <template slot="end">
       <b-navbar-item tag="div">
         <router-link :to="{ path : '/register' }">
-          <div class="button is-primary">
+          <div class="button" id="register">
             <strong>Register</strong>
           </div>
         </router-link>
@@ -28,13 +28,18 @@ export default {
 
 <style lang="scss">
 
-  #logo {
+#logo {
     min-width: 75px;
     min-height: 75px;
-  }
+}
 
-  #nav {
-    background-color: #2E0041;
-  }
 
+#register {
+    background-color: #D584FF;
+
+    border-color: #8C00B6;
+    border-radius: 4px;
+
+    color: white;
+}
 </style>

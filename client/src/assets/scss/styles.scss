@@ -7,13 +7,16 @@ $purple-4: #D584FF;
 $purple-5: #E7BAFF;
 $purple-6: #2E0041;
 
-$primary: $purple;
+$primary: $purple-6;
 
 $family-sans-serif: 'Open Sans', sans-serif;
-$body-background-color: $purple-4;
 
 .gradient {
-    background-image: linear-gradient(to bottom right, $purple-4, $purple)
+    background-image: linear-gradient(to bottom right, $purple-4, $purple);
+}
+
+.gradient-dark {
+    background-image: linear-gradient($purple, $purple-6);
 }
 
 .title {

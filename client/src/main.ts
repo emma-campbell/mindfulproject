@@ -9,6 +9,8 @@ import router from './router';
 import 'bulma/bulma.sass';
 import '@/assets/scss/styles.scss';
 
+import '@mdi/font/css/materialdesignicons.css';
+
 import 'vue-material-design-icons/styles.css';
 
 Vue.config.productionTip = false;

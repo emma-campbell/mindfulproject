@@ -1,9 +1,9 @@
 <template>
-<div class="gradient" id="home">
+<div id="home">
     <header>
       <Nav/>
     </header>
-    <section class="hero is-fullheight gradient">
+    <section class="hero is-fullheight is-light">
       <div class="hero-body">
         <div class="container has-text-centered">
           <h1 class="title"> Placeholder </h1>
