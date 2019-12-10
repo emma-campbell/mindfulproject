@@ -10,6 +10,13 @@
 
     <template slot="end">
       <b-navbar-item tag="div">
+            <router-link :to="{ path : '/login' }">
+              <div class="button" id="login">
+                <strong>Log In</strong>
+              </div>
+            </router-link>
+          </b-navbar-item>
+      <b-navbar-item tag="div">
         <router-link :to="{ path : '/register' }">
           <div class="button" id="register">
             <strong>Register</strong>
