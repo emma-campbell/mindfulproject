@@ -1,21 +1,48 @@
-<template>
-  <section class="hero is-fullheight gradient" id="reg">
-    <div class="hero-body">
-      <div class="container">
-        <div class="columns is-centered">
-          <div class="column is-half">
-            <div class="box">
-              <div class="card-content">
-                <div class="container">
-                  <div class="container has-text-centered">
-                    <p class="title">We're excited to have you 🎉</p>
-                    <p>What can we call you?</p>
-                    <br>
-                    <b-input type="text" name="name" placeholder="Jane Doe"></b-input>
-                  </div>
-                  <div class="container is-pulled-right" id="submit-container">
-                    <IconButton/>
-                  </div>
+<section class="hero is-fullheight gradient" id="reg">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-half">
+          <div class="box">
+            <div class="card-content">
+              <div class="container">
+                <p class="title"
+                  v-if="getName">
+                  We're excited to have you 🎉
+                </p>
+                <div id="instructions" v-if="getName">
+                  <p>What can we call you?</p>
+                </div>
+                <p class="title"
+                  v-if="getAccount" 
+                  :value="name  ">
+                  Welcome, {{ name }}
+                </p>
+              <br>
+                <form>
+                  <b-field>
+                    <b-input type="text" :v-model="name"
+                              placeholder="Jane Doe">
+                    </b-input>
+                  </b-field>
+                  <b-field label="Email" hidden>
+                    <b-input type="email" :v-model="email"
+                            placeholder="janedoe@gmail.com">
+                    </b-input>
+                  </b-field>
+                  <b-field label="Password" hidden>
+                    <b-input type="password" :v-model="password"
+                            placeholder="********">
+                    </b-input>
+                  </b-field>
+                  <b-field label="Confirm Password" hidden>
+                    <b-input type="password" :v-model="password2"
+                            placeholder="********">
+                    </b-input>
+                  </b-field>
+                </form>
+                <div class="container is-pulled-right" id="submit-container">
+                  <IconButton @click="next"/>
                 </div>
               </div>
             </div>
@@ -23,26 +50,5 @@
         </div>
       </div>
     </div>
-  </section>
-</template>
-
-<style lang="scss">
-
-.box {
-    border-radius: 8px;
-    min-height: 300px;
-}
-
-#boxtitle {
-    border-width: 0px 2px 0px 0px;
-}
-
-#submit-container {
-    padding-top: 20px;
-}
-
-#next:hover {
-    color: #8C00B6;
-}
-
-</style>
+  </div>
+</section>

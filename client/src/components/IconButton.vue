@@ -3,12 +3,16 @@
     icon="arrow-right-bold-circle-outline"
     size="is-large"
     type="button is-grey"
-    id="next"></b-icon>
+    id="next"
+    v-on:click="$emit('click', $event)"></b-icon>
 </template>
 
 <script lang="ts">
+// import { Component, Watch } from 'vue-property-decorator';
+// @Component()
+
 export default {
-  name: 'next-button',
+  name: 'icon-button',
 };
 </script>
 
