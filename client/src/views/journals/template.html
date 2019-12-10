@@ -1,0 +1,160 @@
+<section class="hero is-fullheight gradient" id="reg">
+  <div class="hero-head">
+    <div class="container">
+      <section class="section">
+        <!--Nav Bar-->
+        <b-navbar>
+          <template slot="start">
+            <b-navbar-item tag="div">
+              <p class="subtitle is-4">
+                Melissa's Journal <br>
+                <span class="subtitle is-6">
+                  <strong>123</strong> entries
+                </span>
+              </p>
+            </b-navbar-item>
+          </template>
+
+          <template slot="end">
+            <b-navbar-item tag="div">
+              <div class="field has-addons">
+                <p class="control">
+                  <input class="input" type="text" placeholder="Find an entry">
+                </p>
+                <p class="control">
+                  <button class="button">
+                    Search
+                  </button>
+                </p>
+              </div>
+            </b-navbar-item>
+            <b-navbar-item tag="div">
+              <div class="button is-success">
+                <strong>Add Entry</strong>
+              </div>
+            </b-navbar-item>
+          </template>
+        </b-navbar>
+      </section>
+
+      <section class="section is-paddingless">
+        <div class="tile is-ancestor">
+
+          <!--Column 1-->
+          <div class="tile is-parent is-4 is-vertical">
+              <article class="tile is-child box">
+                <p class="title is-4 is-marginless">This is my entry title yo</p>
+                <nav class="level">
+                  <div class="level-left">
+                    <div class="level-item">
+                      <p class="subtitle is-6">Date</p>
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">
+                      <!--Edit Button-->
+                      <b-icon icon="pencil-outline"></b-icon>
+                    </div>
+                    <div class="level-item">
+                      <!--Delete Button-->
+                      <b-button type="is-text"
+                        @click="isModalActive = true">
+                        <b-icon icon="delete-outline"> </b-icon>
+                      </b-button>
+                    </div>
+                  </div>
+                </nav>
+                <div class="content">
+                  <p> Blah blah blah blah Blah blah blah blahBlah blah blah blahBlah blah blah blah.</p>
+                </div>
+              </article>
+
+
+          </div>
+
+          <!--Column 2-->
+          <div class="tile is-parent is-4 is-vertical">
+            <article class="tile is-child box">
+              <p class="title is-4 is-marginless">This is my entry title yo</p>
+              <nav class="level">
+                <div class="level-left">
+                  <div class="level-item">
+                    <p class="subtitle is-6">Date</p>
+                  </div>
+                </div>
+                <div class="level-right">
+                  <div class="level-item">
+                    <!--Edit Button-->
+                    <b-icon icon="pencil-outline"></b-icon>
+                  </div>
+                  <div class="level-item">
+                    <!--Delete Button-->
+                    <b-button type="is-text"
+                              @click="isModalActive = true">
+                      <b-icon icon="delete-outline"> </b-icon>
+                    </b-button>
+                  </div>
+                </div>
+              </nav>
+              <div class="content">
+                <p> Blah blah blah blah Blah blah blah blahBlah blah blah blahBlah blah blah blah.</p>
+              </div>
+            </article>
+          </div>
+
+          <!--Column 3-->
+          <div class="tile is-parent is-4 is-vertical">
+            <article class="tile is-child box">
+              <p class="title is-4 is-marginless">This is my entry title yo</p>
+              <nav class="level">
+                <div class="level-left">
+                  <div class="level-item">
+                    <p class="subtitle is-6">Date</p>
+                  </div>
+                </div>
+                <div class="level-right">
+                  <div class="level-item">
+                    <!--Edit Button-->
+                    <b-icon icon="pencil-outline"></b-icon>
+                  </div>
+                  <div class="level-item">
+                    <!--Delete Button-->
+                    <b-button type="is-text"
+                              @click="isModalActive = true">
+                      <b-icon icon="delete-outline"> </b-icon>
+                    </b-button>
+                  </div>
+                </div>
+              </nav>
+              <div class="content">
+                <p> Blah blah blah blah Blah blah blah blahBlah blah blah blahBlah blah blah blah.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!--Modal-->
+        <b-modal :active.sync="isModalActive" :width="640" scroll="keep">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+            <header class="modal-card-head is-primary">
+              <p class="modal-card-title">Confirm Delete</p>
+            </header>
+            <section class="modal-card-body">
+              <div class="content has-text-centered">
+                <br>
+                <p class="subtitle">Are you sure you want to delete your entry?</p>
+                <br>
+              </div>
+            </section>
+            <footer class="modal-card-foot">
+              <a class="button is-success">Yes</a>
+              <button class="button" @click="isModalActive= false">No</button>
+            </footer>
+          </div>
+        </b-modal>
+
+      </section>
+    </div>
+  </div>
+</section>
