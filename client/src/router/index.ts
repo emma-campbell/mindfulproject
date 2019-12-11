@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Home from '@/views/Home.vue';
 import Register from '@/views/register/Register.vue';
 import Habits from '@/views/habits/Habits.vue';
+import Qids from '@/views/qids/qids.vue';
 
 Vue.use(Router);
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/habits',
       name: 'habits',
       component: Habits,
+    },
+    {
+      path: '/qids',
+      name: 'qids',
+      component: Qids,
     },
   ],
 });
