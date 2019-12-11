@@ -1,0 +1,181 @@
+<section class="hero is-fullheight gradient" id="reg">
+  <div class="hero-head">
+    <div class="container">
+      <section class="section">
+        <!--Nav Bar-->
+        <b-navbar>
+          <template slot="start">
+            <b-navbar-item tag="div">
+              <b-icon
+                      icon="arrow-left-bold">
+              </b-icon>
+            </b-navbar-item>
+            <b-navbar-item tag="div">
+              December 2019
+            </b-navbar-item>
+            <b-navbar-item tag="div">
+              <b-icon
+                    icon="arrow-right-bold">
+              </b-icon>
+            </b-navbar-item>
+          </template>
+
+          <template slot="end">
+            <b-navbar-item tag="div">
+              <b-datepicker v-model="month"
+                      type="month"
+                      placeholder="Click to select..."
+                      icon="calendar-today">
+              </b-datepicker>
+            </b-navbar-item>
+            <b-navbar-item tag="div">
+              <div class="button is-success">
+                <strong>Add Habit</strong>
+              </div>
+            </b-navbar-item>
+          </template>
+        </b-navbar>
+      </section>
+
+      <section class="section is-paddingless">
+        <b-table
+                :data="data"
+                :bordered="isBordered">
+
+          <template slot-scope="props">
+            <b-table-column field="habit" label="Habits">
+              {{ props.row.habit }}
+            </b-table-column>
+
+            <b-table-column field="1" label="1" width="30">
+              {{ props.row.one }}
+            </b-table-column>
+
+            <b-table-column field="2" label="2" width="30">
+              {{ props.row.two }}
+            </b-table-column>
+
+            <b-table-column field="3" label="3" width="30">
+              {{ props.row.three }}
+            </b-table-column>
+
+            <b-table-column field="4" label="4" width="30">
+              {{ props.row.four }}
+            </b-table-column>
+
+            <b-table-column field="5" label="5" width="30">
+              {{ props.row.five }}
+            </b-table-column>
+
+            <b-table-column field="6" label="6" width="30">
+              {{ props.row.six }}
+            </b-table-column>
+
+            <b-table-column field="7" label="7" width="30">
+              {{ props.row.seven }}
+            </b-table-column>
+
+            <b-table-column field="8" label="8" width="30">
+              {{ props.row.eight }}
+            </b-table-column>
+
+            <b-table-column field="9" label="9" width="30">
+              {{ props.row.nine }}
+            </b-table-column>
+
+            <b-table-column field="10" label="10" width="30">
+              {{ props.row.ten }}
+            </b-table-column>
+
+            <b-table-column field="11" label="11" width="30">
+              {{ props.row.eleven }}
+            </b-table-column>
+
+            <b-table-column field="12" label="12" width="30">
+              {{ props.row.twelve }}
+            </b-table-column>
+
+            <b-table-column field="13" label="13" width="30">
+              {{ props.row.thirteen }}
+            </b-table-column>
+
+            <b-table-column field="14" label="14" width="30">
+              {{ props.row.fourteen }}
+            </b-table-column>
+
+            <b-table-column field="15" label="15" width="30">
+              {{ props.row.fifteen }}
+            </b-table-column>
+
+            <b-table-column field="16" label="16" width="30">
+              {{ props.row.sixteen }}
+            </b-table-column>
+
+            <b-table-column field="17" label="17" width="30">
+              {{ props.row.seventeen }}
+            </b-table-column>
+
+            <b-table-column field="18" label="18" width="30">
+              {{ props.row.eighteen }}
+            </b-table-column>
+
+            <b-table-column field="19" label="19" width="30">
+              {{ props.row.nineteen }}
+            </b-table-column>
+
+            <b-table-column field="20" label="20" width="30">
+              {{ props.row.twenty }}
+            </b-table-column>
+
+            <b-table-column field="21" label="21" width="30">
+              {{ props.row.four }}
+            </b-table-column>
+
+            <b-table-column field="22" label="22" width="30">
+              {{ props.row.four }}
+            </b-table-column>
+
+            <b-table-column field="23" label="23" width="30">
+              {{ props.row.four }}
+            </b-table-column>
+
+            <b-table-column field="24" label="24" width="30">
+              {{ props.row.four }}
+            </b-table-column>
+
+            <b-table-column field="25" label="25" width="30">
+              {{ props.row.four }}
+            </b-table-column>
+
+            <b-table-column field="26" label="26" width="30">
+              {{ props.row.four }}
+            </b-table-column>
+
+            <b-table-column field="27" label="27" width="30">
+              {{ props.row.four }}
+            </b-table-column>
+
+            <b-table-column field="28" label="28" width="30">
+              {{ props.row.four }}
+            </b-table-column>
+
+          </template>
+
+          <template slot="empty">
+            <section class="section">
+              <div class="content has-text-grey has-text-centered">
+                <p>
+                  <b-icon
+                          icon="emoticon-sad"
+                          size="is-large">
+                  </b-icon>
+                </p>
+                <p>Nothing here.</p>
+              </div>
+            </section>
+          </template>
+        </b-table>
+      </section>
+    </div>
+  </div>
+</section>
