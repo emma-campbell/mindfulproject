@@ -3,28 +3,49 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_cors import CORS
 from flask_migrate import Migrate, MigrateCommand
+from flask_mail import Mail
+from flask_praetorian import PraetorianError
 
 from .exceptions import InvalidUsage
 from config import ProdConfig
 
-import commands
+from .extensions import db, mail, auth
+from .api.users.model import User
 
-# provide db
-db = SQLAlchemy()
-login = LoginManager()
-migrate = Migrate()
+import logging
 
 def create_app(config_object=ProdConfig):
     """Construct core application"""
     app = Flask(__name__, instance_relative_config=False)
     app.config.from_object(config_object)
 
-    register_extensions(app)
-    register_blueprints(app)
-    register_errorhandlers(app)
-    register_shellcontext(app)
-    register_commands(app)
+    from logging.config import dictConfig
+    from .logging import logging_config
 
+    dictConfig(logging_config)
+
+    app.logger.info('Registering extensions')
+    register_extensions(app)
+
+    app.logger.info('Adding routes')
+    register_blueprints(app)
+
+    app.logger.info('Adding error handlers')
+    register_errorhandlers(app)
+    app.register_error_handler(
+        PraetorianError,
+        PraetorianError.build_error_handler(
+            lambda e: app.logger.error(e.message)
+        )
+    )
+
+    with app.app_context():
+
+        from . import extensions, exceptions, api
+
+        if app.config['ENV'] == 'dev':
+            db.drop_all()
+        db.create_all()
     return app
 
 def register_extensions(app):
@@ -33,18 +54,18 @@ def register_extensions(app):
     # start up our database
     db.init_app(app)
 
-    # add our login manager
-    login.init_app(app)
+    # add Mail service
+    if app.config['MAIL_SERVER'] is not None:
+        mail.init_app(app)
+
+    auth.init_app(app, User)
 
     # set up CORS so this app can talk w/ the frontend {@code client}
     CORS(app, resources={r'/*': {'origins' : '*'}})
 
-    # now, let's add our database migrations
-    migrate.init_app(app, db)
-
 def register_blueprints(app):
     """Register Flask blueprints."""
-    from server.api import api as api_bp
+    from .api import api as api_bp
     app.register_blueprint(api_bp, url_prefix='/api')
 
 def register_errorhandlers(app):
@@ -53,26 +74,4 @@ def register_errorhandlers(app):
         response = error.to_json()
         response.status_code = error.status_code
         return response
-
     app.errorhandler(InvalidUsage)(errorhandler)
-
-
-def register_shellcontext(app):
-    """Register shell context objects."""
-
-    def shell_context():
-        """Shell context objects."""
-        return {
-            'db' : db,
-            'User': api.users.model.User
-        }
-
-    app.shell_context_processor(shell_context)
-
-
-def register_commands(app):
-    """Register Click commands."""
-    app.cli.add_command('lint', commands.lint)
-    app.cli.add_command('clean', commands.clean)
-    app.cli.add_command('urls', commands.urls)
-    app.cli.add_command('db', MigrateCommand)

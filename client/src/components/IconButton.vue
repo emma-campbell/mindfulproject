@@ -4,16 +4,23 @@
     size="is-large"
     type="button is-grey"
     id="next"
-    v-on:click="$emit('click', $event)"></b-icon>
+    click.native="onClick()"></b-icon>
 </template>
 
 <script lang="ts">
-// import { Component, Watch } from 'vue-property-decorator';
-// @Component()
+import {
+  Vue,
+  Component,
+} from 'vue-property-decorator';
 
-export default {
-  name: 'icon-button',
-};
+@Component({})
+export default class IconButton extends Vue {
+  public onClick(): void {
+    // eslint-disable-next-line
+    console.log('click');
+    this.$emit('click');
+  }
+}
 </script>
 
 <style lang="scss">
