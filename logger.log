@@ -292,3 +292,6 @@ DEBUG 2019-12-11 23:01:39,456 { module name : base Line no : 384} Attaching cust
 INFO 2019-12-11 23:01:39,457 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/api/users[0m [33mstatus=200[0m [32mduration=0.04[0m [35mtime=2019-12-12T04:01:39Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
 ERROR 2019-12-11 23:02:02,563 { module name : __init__ Line no : 38} invalid registration token used for verification
 INFO 2019-12-11 23:02:02,564 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/api/confirm[0m [33mstatus=401[0m [32mduration=0.0[0m [35mtime=2019-12-12T04:02:02Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-12 02:53:56,138 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-12 02:53:56,163 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-12 02:53:56,165 { module name : __init__ Line no : 33} Adding error handlers
