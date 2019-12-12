@@ -38,9 +38,10 @@ def create_app(config_object=ProdConfig):
             lambda e: app.logger.error(e.message)
         )
     )
+
     with app.app_context():
 
-        from . import extensions, exceptions, api, logging
+        from . import extensions, exceptions, api
 
         if app.config['ENV'] == 'dev':
             db.drop_all()

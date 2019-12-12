@@ -9,32 +9,21 @@ from datetime import datetime
 @api.route('/users', methods=['POST'])
 def register():
     """"""
-    req = request.get_json(force=True)
-
-    name = req.get('name', None)
-    email = req.get('email', None)
-    password = req.get('password', None)
-
-    user = User(
-        name=name,
-        email=email,
-        password=auth.hash_password(password),
-        roles='operator'
-    )
-
+    req = dict(request.get_json(force=True))
+    user = User()
+    user.from_dict(data=req, new_user=True)
+    user.roles = 'operator'
     user.create()
+
     ret = {}
 
     ################################################################
     # Below, we will be defining the confirmation email that
     # users recieve after registering.
-    #
-    #     - Generate the URL
     ################################################################
 
-    uri = url_for('api.confirm', _external=True)
 
-    ret['token'] = auth.send_registration_email(email, user=user, confirmation_uri=uri)['token']
+    ret['token'] = auth.encode_jwt_token(user=user)
     ret['user'] = user.to_dict(include_email=True)
 
     return (jsonify(ret), 200)
@@ -42,7 +31,7 @@ def register():
 @api.route('/confirm', methods=['POST'])
 def confirm():
     """"""
-    user = auth.get_user_from_registration_token(request.args.get('token'))
+    user = auth.get_user_from_registration_token(request.get_json(force=True)['token'])
     user.confirmed = True
     user.confirmed_on = datetime.now()
 

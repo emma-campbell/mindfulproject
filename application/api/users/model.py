@@ -90,14 +90,8 @@ class User(db.Model):
                 setattr(self, field, data[field])
 
         if new_user and 'password' in data:
-            self.set_password(data['password'])
+            self.password = auth.hash_password(data['password'])
 
-    def get_token(self, expires_in=3600):
-        s = Serializer(current_app.config['SECRET_KEY'], expires_in=expires_in)
-        return s.dumps({ 'id' : self.id })
-
-    def revoke_token(self):
-        self.token_expiration = datetime.utcnow() - timedelta(seconds=1)
 
     @staticmethod
     def check_token(token):

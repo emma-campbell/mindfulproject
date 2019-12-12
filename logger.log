@@ -187,3 +187,108 @@ INFO 2019-12-11 22:24:31,590 { module name : run Line no : 77} [34mmethod=POST
 INFO 2019-12-11 22:24:33,131 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/confirm[0m [33mstatus=404[0m [32mduration=0.0[0m [35mtime=2019-12-12T03:24:33Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
 ERROR 2019-12-11 22:24:59,144 { module name : __init__ Line no : 38} failed to decode JWT token -- DecodeError: Invalid token type. Token must be a <class 'bytes'>
 INFO 2019-12-11 22:24:59,145 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/api/confirm[0m [33mstatus=401[0m [32mduration=0.0[0m [35mtime=2019-12-12T03:24:59Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-11 22:28:03,961 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:28:03,969 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:28:03,972 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-11 22:28:08,090 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:28:08,100 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:28:08,103 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-11 22:28:20,622 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:28:20,669 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:28:20,674 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-11 22:28:20,889 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:28:20,898 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:28:20,901 { module name : __init__ Line no : 33} Adding error handlers
+DEBUG 2019-12-11 22:28:26,538 { module name : base Line no : 650} NOTIFICATION: {'result': None, 'message': None, 'user': '<APPLICATION.API.USERS.MODEL:User.id>', 'email': 'ecampb10@u.rochester.edu', 'token': None, 'subject': 'Welcome to Mindful [Please Confirm your email!]', 'confirmation_uri': 'http://localhost:5000/api/confirm'}
+DEBUG 2019-12-11 22:28:26,538 { module name : base Line no : 653} Generating registration token with lifespan: None
+DEBUG 2019-12-11 22:28:26,543 { module name : base Line no : 384} Attaching custom claims: {}
+DEBUG 2019-12-11 22:28:26,553 { module name : base Line no : 671} Sending verification email to ecampb10@u.rochester.edu
+INFO 2019-12-11 22:28:29,680 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/api/users[0m [33mstatus=200[0m [32mduration=3.18[0m [35mtime=2019-12-12T03:28:29Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+DEBUG 2019-12-11 22:29:43,277 { module name : base Line no : 683} DATA: {'iat': 1576121306, 'exp': 1576207706, 'jti': '55fad850-0eb5-47ef-aaa9-a04505a7c32d', 'id': 1, 'rls': 'operator', 'rf_exp': 1578713306, 'is_ert': True}
+DEBUG 2019-12-11 22:29:43,281 { module name : base Line no : 384} Attaching custom claims: {}
+INFO 2019-12-11 22:29:43,282 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/api/confirm[0m [33mstatus=200[0m [32mduration=0.0[0m [35mtime=2019-12-12T03:29:43Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-11 22:32:43,474 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:32:43,484 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:32:43,486 { module name : __init__ Line no : 33} Adding error handlers
+DEBUG 2019-12-11 22:34:31,522 { module name : base Line no : 384} Attaching custom claims: {}
+INFO 2019-12-11 22:34:31,523 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/api/users[0m [33mstatus=200[0m [32mduration=0.04[0m [35mtime=2019-12-12T03:34:31Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-11 22:36:15,625 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:36:15,653 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:36:15,662 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-11 22:36:16,481 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:36:16,490 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:36:16,494 { module name : __init__ Line no : 33} Adding error handlers
+DEBUG 2019-12-11 22:36:20,064 { module name : base Line no : 384} Attaching custom claims: {}
+INFO 2019-12-11 22:36:20,065 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/api/users[0m [33mstatus=200[0m [32mduration=0.04[0m [35mtime=2019-12-12T03:36:20Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+ERROR 2019-12-11 22:36:38,811 { module name : __init__ Line no : 38} invalid registration token used for verification
+INFO 2019-12-11 22:36:38,812 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/api/confirm[0m [33mstatus=401[0m [32mduration=0.0[0m [35mtime=2019-12-12T03:36:38Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-11 22:36:57,283 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:36:57,293 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:36:57,296 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-11 22:36:57,929 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:36:57,939 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:36:57,942 { module name : __init__ Line no : 33} Adding error handlers
+DEBUG 2019-12-11 22:37:03,764 { module name : base Line no : 384} Attaching custom claims: {}
+INFO 2019-12-11 22:37:03,764 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/api/users[0m [33mstatus=200[0m [32mduration=0.04[0m [35mtime=2019-12-12T03:37:03Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-11 22:40:02,561 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:40:02,572 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:40:02,575 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-11 22:40:03,112 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:40:03,120 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:40:03,123 { module name : __init__ Line no : 33} Adding error handlers
+DEBUG 2019-12-11 22:40:08,678 { module name : base Line no : 384} Attaching custom claims: {}
+INFO 2019-12-11 22:40:08,679 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/api/users[0m [33mstatus=200[0m [32mduration=0.04[0m [35mtime=2019-12-12T03:40:08Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-11 22:46:15,983 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:46:15,991 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:46:15,993 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-11 22:46:21,065 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:46:21,085 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:46:21,097 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-11 22:46:29,333 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:46:29,346 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:46:29,351 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-11 22:48:33,576 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:48:33,592 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:48:33,598 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-11 22:48:54,215 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:48:54,232 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:48:54,236 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-11 22:49:20,852 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:49:20,865 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:49:20,869 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-11 22:56:17,469 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:56:17,480 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:56:17,484 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-11 22:57:32,100 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:57:32,110 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:57:32,113 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-11 22:57:58,555 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:57:58,563 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:57:58,566 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-11 22:58:11,672 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:58:11,680 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:58:11,682 { module name : __init__ Line no : 33} Adding error handlers
+DEBUG 2019-12-11 22:58:38,367 { module name : base Line no : 384} Attaching custom claims: {}
+INFO 2019-12-11 22:58:38,368 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/api/users[0m [33mstatus=200[0m [32mduration=0.05[0m [35mtime=2019-12-12T03:58:38Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+ERROR 2019-12-11 22:58:57,385 { module name : __init__ Line no : 38} invalid registration token used for verification
+INFO 2019-12-11 22:58:57,386 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/api/confirm[0m [33mstatus=401[0m [32mduration=0.0[0m [35mtime=2019-12-12T03:58:57Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+ERROR 2019-12-11 22:58:59,299 { module name : __init__ Line no : 38} invalid registration token used for verification
+INFO 2019-12-11 22:58:59,300 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/api/confirm[0m [33mstatus=401[0m [32mduration=0.0[0m [35mtime=2019-12-12T03:58:59Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-11 22:59:17,101 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:59:17,114 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:59:17,118 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-11 22:59:17,630 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:59:17,637 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:59:17,639 { module name : __init__ Line no : 33} Adding error handlers
+DEBUG 2019-12-11 22:59:49,211 { module name : base Line no : 384} Attaching custom claims: {}
+INFO 2019-12-11 22:59:49,213 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/api/users[0m [33mstatus=200[0m [32mduration=0.06[0m [35mtime=2019-12-12T03:59:49Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-11 23:01:32,646 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 23:01:32,658 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 23:01:32,661 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-11 23:01:33,171 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 23:01:33,178 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 23:01:33,180 { module name : __init__ Line no : 33} Adding error handlers
+DEBUG 2019-12-11 23:01:39,456 { module name : base Line no : 384} Attaching custom claims: {}
+INFO 2019-12-11 23:01:39,457 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/api/users[0m [33mstatus=200[0m [32mduration=0.04[0m [35mtime=2019-12-12T04:01:39Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+ERROR 2019-12-11 23:02:02,563 { module name : __init__ Line no : 38} invalid registration token used for verification
+INFO 2019-12-11 23:02:02,564 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/api/confirm[0m [33mstatus=401[0m [32mduration=0.0[0m [35mtime=2019-12-12T04:02:02Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
