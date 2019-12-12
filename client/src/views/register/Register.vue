@@ -18,23 +18,32 @@ import IconButton from '@/components/IconButton.vue';
 export default class Register extends Vue {
   path: string = 'http://localhost:5000/api/users/';
 
-  name: string = '';
+  private data = {
+    name: '',
+    email: '',
+    password: '',
+    password2: '',
+  };
 
-  email: string = '';
+  private errors: string[] = [];
 
-  password: string = '';
+  @Prop() public name!: string;
 
-  password2: string = '';
+  @Prop() public email!: string;
 
-  validated: boolean = false;
+  @Prop() public password!: string;
+
+  @Prop() public password2!: string;
+
+  @Prop() public validated!: boolean;
+
+  @Prop() public getName!: boolean;
+
+  @Prop() public getAccount!: boolean;
+
+  @Prop() public showMessage!: boolean;
 
   @Prop() message!: string;
-
-  @Prop() getName!: boolean;
-
-  @Prop() getAccount!: boolean;
-
-  @Prop() showMessage!: boolean;
 
   constructor() {
     super();
@@ -44,61 +53,83 @@ export default class Register extends Vue {
     this.showMessage = false;
   }
 
+  private validateName(): boolean {
+    const { name } = this;
+    if (name.length > 0) {
+      if (name.split(' ').length !== 2) {
+        this.message = 'Please enter your first and last name.';
+        this.showMessage = true;
+      } else {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  private validateEmail(): boolean {
+    const { email } = this;
+    if (email.length > 0) {
+      if (email.split('@').length !== 2) {
+        this.message = 'Please enter a valid email address.';
+        this.showMessage = true;
+      } else {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  private validatePassword(): boolean {
+    const { password } = this;
+    const { password2 } = this;
+
+    if (password.length > 0 && password2.length > 0 && password === password2) {
+      return true;
+    }
+
+    this.message = 'Please enter a valid password.';
+    this.showMessage = true;
+    return false;
+  }
+
   public next(): void {
     let user;
 
     if (this.getName) {
-      if (this.name.length > 0) {
+      if (this.validateName()) {
+        this.data.name = this.name;
         this.getName = false;
         this.getAccount = true;
-        this.showMessage = false;
       } else {
-        this.message = 'Please enter a valid name!';
-        this.showMessage = true;
+        this.errors.push(this.message);
       }
     } else {
       // validate email
-      if (this.email.length > 0
-          && this.email.split('@').length === 2) {
-        this.showMessage = false;
-
-        // validate password
-        if (this.password.length > 0
-            && this.password2.length > 0
-            && this.password === this.password2) {
-          this.showMessage = false;
-          this.validated = true;
-        } else {
-          this.message = 'Please make sure your passwords match!';
-          this.showMessage = true;
-        }
-
-        if (!this.validated) {
-          this.$router.push('/register');
-        } else {
-          user = this.addUser();
-        }
-      } else {
-        this.message = 'Please enter a valid email.';
-        this.showMessage = true;
+      if (this.validateEmail()) {
+        this.data.email = this.email;
       }
+
+      if (this.validatePassword()) {
+        this.data.password = this.password;
+      } else {
+        this.errors.push(this.message);
+      }
+
+      if (this.errors.length !== 0) {
+        user = this.addUser(this.data);
+      }
+
       console.log(user);
     }
   }
 
   @Emit()
-  private addUser() {
-    axios.post(this.path, {
-      name: this.name,
-      email: this.email,
-      password: this.password,
-      password2: this.password2,
-    })
+  private addUser(payload : object) {
+    axios.post(this.path, payload)
       .then(res => res.data)
       .catch((error) => {
         // eslint-disable-next-line
         console.log(error);
-        this.$router.push('/register');
       });
   }
 }

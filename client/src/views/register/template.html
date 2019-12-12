@@ -1,4 +1,4 @@
-<section class="hero is-fullheight gradient" id="reg">
+<section class="hero is-fullheight gradient" id="reg" xmlns:icon-button="http://www.w3.org/1999/html">
   <div class="hero-body">
     <div class="container">
       <div class="columns is-centered">
@@ -15,34 +15,34 @@
                 </div>
                 <p class="title"
                   v-if="getAccount" 
-                  :value="name  ">
-                  Welcome, {{ name }}
+                  v-bind="name">
+                  Welcome, {{ name }} 👋
                 </p>
-              <br>
+                <br>
                 <form>
                   <b-field>
-                    <b-input type="text" :v-model="name"
+                    <b-input type="text" :v-model.lazy="name"
                               placeholder="Jane Doe">
                     </b-input>
                   </b-field>
                   <b-field label="Email" hidden>
-                    <b-input type="email" :v-model="email"
+                    <b-input type="email" :v-model.lazy="email"
                             placeholder="janedoe@gmail.com">
                     </b-input>
                   </b-field>
                   <b-field label="Password" hidden>
-                    <b-input type="password" :v-model="password"
+                    <b-input type="password" :v-model.lazy="password"
                             placeholder="********">
                     </b-input>
                   </b-field>
                   <b-field label="Confirm Password" hidden>
-                    <b-input type="password" :v-model="password2"
+                    <b-input type="password" :v-model.lazy="password2"
                             placeholder="********">
                     </b-input>
                   </b-field>
                 </form>
                 <div class="container is-pulled-right" id="submit-container">
-                  <IconButton @click="next"/>
+                  <icon-button @click="next()"/>
                 </div>
               </div>
             </div>
