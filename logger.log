@@ -118,3 +118,72 @@ DEBUG 2019-12-11 20:50:08,378 { module name : base Line no : 653} Generating reg
 DEBUG 2019-12-11 20:50:08,381 { module name : base Line no : 384} Attaching custom claims: {}
 DEBUG 2019-12-11 20:50:08,398 { module name : base Line no : 671} Sending verification email to ecampb10@u.rochester.edu
 INFO 2019-12-11 20:50:10,953 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/api/users[0m [33mstatus=200[0m [32mduration=2.61[0m [35mtime=2019-12-12T01:50:10Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-11 22:02:42,803 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:02:42,822 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:02:42,824 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-11 22:02:43,255 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:02:43,268 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:02:43,270 { module name : __init__ Line no : 33} Adding error handlers
+DEBUG 2019-12-11 22:03:14,550 { module name : base Line no : 650} NOTIFICATION: {'result': None, 'message': None, 'user': '<APPLICATION.API.USERS.MODEL:User.id>', 'email': 'ecampb10@u.rochester.edu', 'token': None, 'subject': 'Welcome to Mindful [Please Confirm your email!]', 'confirmation_uri': 'http://localhost:5000/api/confirm/'}
+DEBUG 2019-12-11 22:03:14,550 { module name : base Line no : 653} Generating registration token with lifespan: None
+DEBUG 2019-12-11 22:03:14,554 { module name : base Line no : 384} Attaching custom claims: {}
+DEBUG 2019-12-11 22:03:14,567 { module name : base Line no : 671} Sending verification email to ecampb10@u.rochester.edu
+INFO 2019-12-11 22:03:32,418 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/api/users[0m [33mstatus=200[0m [32mduration=17.9[0m [35mtime=2019-12-12T03:03:32Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-11 22:04:22,672 { module name : run Line no : 77} [34mmethod=GET[0m [34mpath=/api/confirm/[0m [33mstatus=405[0m [32mduration=0.0[0m [35mtime=2019-12-12T03:04:22Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NzYxMTk3OTQsImV4cCI6MTU3NjIwNjE5NCwianRpIjoiMzk5OGQ3MjMtZTgzNi00ZDczLWI3NjQtNzBmOWRmMDFjMTlhIiwiaWQiOjEsInJscyI6Im9wZXJhdG9yIiwicmZfZXhwIjoxNTc4NzExNzk0LCJpc19lcnQiOnRydWV9.HkbhcSB7n9zsI85E0mMaiFUzZak8Kx5Rvrlpkyc4YnQ'}[0m
+INFO 2019-12-11 22:04:53,630 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:04:53,639 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:04:53,641 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-11 22:04:54,264 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:04:54,272 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:04:54,274 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-11 22:07:11,825 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:07:11,840 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:07:11,843 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-11 22:07:47,623 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:07:47,636 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:07:47,638 { module name : __init__ Line no : 33} Adding error handlers
+DEBUG 2019-12-11 22:08:02,032 { module name : base Line no : 650} NOTIFICATION: {'result': None, 'message': None, 'user': '<APPLICATION.API.USERS.MODEL:User.id>', 'email': 'ecampb10@u.rochester.edu', 'token': None, 'subject': 'Welcome to Mindful [Please Confirm your email!]', 'confirmation_uri': 'http://localhost:5000/api/confirm'}
+DEBUG 2019-12-11 22:08:02,032 { module name : base Line no : 653} Generating registration token with lifespan: None
+DEBUG 2019-12-11 22:08:02,036 { module name : base Line no : 384} Attaching custom claims: {}
+DEBUG 2019-12-11 22:08:02,048 { module name : base Line no : 671} Sending verification email to ecampb10@u.rochester.edu
+INFO 2019-12-11 22:08:07,042 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/api/users[0m [33mstatus=200[0m [32mduration=5.05[0m [35mtime=2019-12-12T03:08:07Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-11 22:08:48,011 { module name : run Line no : 77} [34mmethod=GET[0m [34mpath=/api/confirm[0m [33mstatus=405[0m [32mduration=0.0[0m [35mtime=2019-12-12T03:08:48Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NzYxMjAwODIsImV4cCI6MTU3NjIwNjQ4MiwianRpIjoiN2Q5NjI0NjQtNzI1MC00ZDY1LWEyMzEtMzE5MTllYTBmYzBiIiwiaWQiOjEsInJscyI6Im9wZXJhdG9yIiwicmZfZXhwIjoxNTc4NzEyMDgyLCJpc19lcnQiOnRydWV9.3Yp_LZ9gpg3L4ZDbqRvkOYadfufsPmA8EeRxUohv-Ss'}[0m
+INFO 2019-12-11 22:10:43,240 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:10:43,249 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:10:43,251 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-11 22:11:52,963 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/api/login[0m [33mstatus=400[0m [32mduration=0.0[0m [35mtime=2019-12-12T03:11:52Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+ERROR 2019-12-11 22:12:25,679 { module name : __init__ Line no : 38} Could not find the requested user
+INFO 2019-12-11 22:12:25,679 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/api/login[0m [33mstatus=401[0m [32mduration=0.01[0m [35mtime=2019-12-12T03:12:25Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+ERROR 2019-12-11 22:12:27,742 { module name : __init__ Line no : 38} Could not find the requested user
+INFO 2019-12-11 22:12:27,743 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/api/login[0m [33mstatus=401[0m [32mduration=0.0[0m [35mtime=2019-12-12T03:12:27Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-11 22:12:39,179 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:12:39,186 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:12:39,188 { module name : __init__ Line no : 33} Adding error handlers
+DEBUG 2019-12-11 22:12:47,543 { module name : base Line no : 650} NOTIFICATION: {'result': None, 'message': None, 'user': '<APPLICATION.API.USERS.MODEL:User.id>', 'email': 'ecampb10@u.rochester.edu', 'token': None, 'subject': 'Welcome to Mindful [Please Confirm your email!]', 'confirmation_uri': 'http://localhost:5000/api/confirm'}
+DEBUG 2019-12-11 22:12:47,543 { module name : base Line no : 653} Generating registration token with lifespan: None
+DEBUG 2019-12-11 22:12:47,546 { module name : base Line no : 384} Attaching custom claims: {}
+DEBUG 2019-12-11 22:12:47,556 { module name : base Line no : 671} Sending verification email to ecampb10@u.rochester.edu
+INFO 2019-12-11 22:12:56,592 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/api/users[0m [33mstatus=200[0m [32mduration=9.08[0m [35mtime=2019-12-12T03:12:56Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-11 22:14:20,937 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:14:20,945 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:14:20,947 { module name : __init__ Line no : 33} Adding error handlers
+DEBUG 2019-12-11 22:14:29,691 { module name : base Line no : 650} NOTIFICATION: {'result': None, 'message': None, 'user': '<APPLICATION.API.USERS.MODEL:User.id>', 'email': 'ecampb10@u.rochester.edu', 'token': None, 'subject': 'Welcome to Mindful [Please Confirm your email!]', 'confirmation_uri': 'http://localhost:5000/api/confirm'}
+DEBUG 2019-12-11 22:14:29,691 { module name : base Line no : 653} Generating registration token with lifespan: None
+DEBUG 2019-12-11 22:14:29,694 { module name : base Line no : 384} Attaching custom claims: {}
+DEBUG 2019-12-11 22:14:29,885 { module name : base Line no : 671} Sending verification email to ecampb10@u.rochester.edu
+INFO 2019-12-11 22:23:14,405 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:23:14,418 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:23:14,422 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-11 22:23:15,117 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-11 22:23:15,126 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-11 22:23:15,129 { module name : __init__ Line no : 33} Adding error handlers
+DEBUG 2019-12-11 22:23:26,133 { module name : base Line no : 650} NOTIFICATION: {'result': None, 'message': None, 'user': '<APPLICATION.API.USERS.MODEL:User.id>', 'email': 'ecampb10@u.rochester.edu', 'token': None, 'subject': 'Welcome to Mindful [Please Confirm your email!]', 'confirmation_uri': 'http://localhost:5000/api/confirm'}
+DEBUG 2019-12-11 22:23:26,134 { module name : base Line no : 653} Generating registration token with lifespan: None
+DEBUG 2019-12-11 22:23:26,138 { module name : base Line no : 384} Attaching custom claims: {}
+DEBUG 2019-12-11 22:23:26,158 { module name : base Line no : 671} Sending verification email to ecampb10@u.rochester.edu
+INFO 2019-12-11 22:23:29,135 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/api/users[0m [33mstatus=200[0m [32mduration=3.05[0m [35mtime=2019-12-12T03:23:29Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-11 22:24:07,929 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/confirm[0m [33mstatus=404[0m [32mduration=0.0[0m [35mtime=2019-12-12T03:24:07Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-11 22:24:31,590 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/confirm[0m [33mstatus=404[0m [32mduration=0.0[0m [35mtime=2019-12-12T03:24:31Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-11 22:24:33,131 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/confirm[0m [33mstatus=404[0m [32mduration=0.0[0m [35mtime=2019-12-12T03:24:33Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+ERROR 2019-12-11 22:24:59,144 { module name : __init__ Line no : 38} failed to decode JWT token -- DecodeError: Invalid token type. Token must be a <class 'bytes'>
+INFO 2019-12-11 22:24:59,145 { module name : run Line no : 77} [34mmethod=POST[0m [34mpath=/api/confirm[0m [33mstatus=401[0m [32mduration=0.0[0m [35mtime=2019-12-12T03:24:59Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m

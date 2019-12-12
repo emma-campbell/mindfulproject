@@ -35,10 +35,11 @@ def register():
     uri = url_for('api.confirm', _external=True)
 
     ret['token'] = auth.send_registration_email(email, user=user, confirmation_uri=uri)['token']
+    ret['user'] = user.to_dict(include_email=True)
 
     return (jsonify(ret), 200)
 
-@api.route('/confirm/', methods=['POST'])
+@api.route('/confirm', methods=['POST'])
 def confirm():
     """"""
     user = auth.get_user_from_registration_token(request.args.get('token'))
@@ -49,3 +50,7 @@ def confirm():
         'access_token': auth.encode_jwt_token(user)
     }
     return (jsonify(ret), 200)
+
+@api.route('/user/<int:id>', methods=['GET'])
+def get_user(id):
+    return jsonify(User.identify(id).to_dict())

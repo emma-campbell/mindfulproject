@@ -68,12 +68,6 @@ class User(db.Model):
     def is_valid(self):
         return self.is_active
 
-    # Below is the stuff needed for authenticating the user
-    #
-    #
-    #
-    #
-
     def to_dict(self, include_email=False):
 
         data = {
