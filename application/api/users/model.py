@@ -3,6 +3,7 @@ from ..errors import bad_request
 
 from flask import url_for, current_app
 
+from sqlalchemy.exc import IntegrityError
 from werkzeug.security import generate_password_hash, check_password_hash
 from itsdangerous import (TimedJSONWebSignatureSerializer as Serializer, BadSignature, SignatureExpired)
 
@@ -17,7 +18,6 @@ class User(db.Model):
     # social_id is where we store oauth token
     social_id = db.Column(db.String(64), unique=True)
 
-    confirm_sent_on = db.Column(db.DateTime, nullable=True)
     confirmed = db.Column(db.Boolean, nullable=False, default=False)
     confirmed_on = db.Column(db.DateTime, nullable=True,)
 
@@ -50,8 +50,11 @@ class User(db.Model):
 
     def create(self):
         """Create new tuple"""
-        db.session.add(self)
-        db.session.commit()
+        try:
+            db.session.add(self)
+            db.session.commit()
+        except IntegrityError:
+            return bad_request('Email already exists in our system! Please choose another.')
 
     def save(self):
         """Save updated tuple"""

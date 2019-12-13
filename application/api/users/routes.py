@@ -6,6 +6,7 @@ from .model import User
 from ..errors import bad_request
 from datetime import datetime
 
+
 @api.route('/users', methods=['POST'])
 def register():
     """"""
@@ -15,30 +16,30 @@ def register():
     user.roles = 'operator'
     user.create()
 
-    ret = {}
-
     ################################################################
     # Below, we will be defining the confirmation email that
-    # users recieve after registering.
+    # users receive after registering.
     ################################################################
 
+    ret = {'token': auth.send_registration_email(email=user.email, user=user)['token'], 'user': user.to_dict(include_email=True)}
+    return jsonify(ret), 200
 
-    ret['token'] = auth.encode_jwt_token(user=user)
-    ret['user'] = user.to_dict(include_email=True)
-
-    return (jsonify(ret), 200)
 
 @api.route('/confirm', methods=['POST'])
 def confirm():
     """"""
-    user = auth.get_user_from_registration_token(request.get_json(force=True)['token'])
+    logger = current_app.logger
+    token = auth.read_token_from_header()
+    user = auth.get_user_from_registration_token(token)
+
     user.confirmed = True
     user.confirmed_on = datetime.now()
 
     ret = {
         'access_token': auth.encode_jwt_token(user)
     }
-    return (jsonify(ret), 200)
+    return jsonify(ret), 200
+
 
 @api.route('/user/<int:id>', methods=['GET'])
 def get_user(id):
