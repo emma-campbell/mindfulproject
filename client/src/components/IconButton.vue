@@ -3,22 +3,23 @@
     icon="arrow-right-bold-circle-outline"
     size="is-large"
     type="button is-grey"
-    id="next"
-    click.native="onClick()"></b-icon>
+    @click.native="onClick()"></b-icon>
 </template>
 
 <script lang="ts">
 import {
   Vue,
   Component,
+  Emit,
 } from 'vue-property-decorator';
 
 @Component({})
 export default class IconButton extends Vue {
+  @Emit()
   public onClick(): void {
     // eslint-disable-next-line
+    this.$emit('click')
     console.log('click');
-    this.$emit('click');
   }
 }
 </script>

@@ -1,131 +1,183 @@
-<template src="./template.html"></template>
+<template>
+  <section class="hero is-fullheight gradient" id="reg">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-half">
+            <div class="box">
+              <div class="card-content">
+                <div class="container">
+
+                  <p class="title"
+                     v-if="getName">
+                    We're excited to have you 🎉
+                  </p>
+                  <div id="instructions"
+                       v-if="getName">
+                    <p>What can we call you?</p>
+                  </div>
+
+                  <p class="title"
+                     v-if="getAccount"
+                     v-bind="this.name" >
+                    Welcome, {{ this.name.split(" ")[0] }} 👋
+                  </p>
+                  <p class="instructions"
+                     v-if="getAccount">
+                    Please enter your email and password.
+                  </p>
+
+                  <br v-if="getName">
+                  <form>
+                    <b-field>
+                      <b-input type="text"
+                               v-model.lazy="name"
+                               v-if="getName"
+                               v-bind="{ 'is-danger' : errors }"
+                               placeholder="Jane Doe">
+                      </b-input>
+                    </b-field>
+
+                    <b-field label="Email" v-if="getAccount">
+                      <b-input type="email"
+                               v-model.lazy="email"
+                               placeholder="janedoe@gmail.com"
+                               v-bind="{ 'is-danger' : errors }">
+                      </b-input>
+                    </b-field>
+                    <b-field label="Password" v-if="getAccount">
+                      <b-input type="password"
+                               v-model.lazy="password"
+                               placeholder="********"
+                               v-bind="{ 'is-danger' : errors }">
+                      </b-input>
+                    </b-field>
+
+                    <b-field label="Confirm Password" v-if="getAccount" v-slot="{ errors }">
+                      <b-input type="password"
+                               v-model.lazy="confirmed"
+                               placeholder="********"
+                               v-bind="{ 'is-danger' : errors }">
+                      </b-input>
+                    </b-field>
+                  </form>
+
+                  <div class="container is-pulled-right" id="submit-container">
+                    <IconButton v-on:click="next"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
 <script lang="ts">
 import 'reflect-metadata';
 import axios from 'axios';
+import { validate, extend, ValidationProvider } from 'vee-validate';
 
 import {
-  Vue,
+  Vue, Inject,
   Component,
-  Prop,
-  Emit,
+  Prop, Watch,
 } from 'vue-property-decorator';
 
 import IconButton from '@/components/IconButton.vue';
 
 @Component({
-  components: { IconButton },
+  components: { IconButton, ValidationProvider },
 })
 export default class Register extends Vue {
   path: string = 'http://localhost:5000/api/users/';
 
-  private data = {
-    name: '',
-    email: '',
-    password: '',
-    password2: '',
-  };
-
   private errors: string[] = [];
 
-  @Prop() public name!: string;
+  @Prop({ default: '' }) public name!: string;
 
-  @Prop() public email!: string;
+  @Prop({ default: '' }) public email!: string;
 
-  @Prop() public password!: string;
+  @Prop({ default: '' }) public password!: string;
 
-  @Prop() public password2!: string;
+  @Prop({ default: '' }) public confirmation!: string;
 
-  @Prop() public validated!: boolean;
+  @Prop({ default: false }) public validated!: boolean;
 
-  @Prop() public getName!: boolean;
+  @Prop({ default: true }) public getName!: boolean;
 
-  @Prop() public getAccount!: boolean;
+  @Prop({ default: false }) public getAccount!: boolean;
 
-  @Prop() public showMessage!: boolean;
+  @Prop({ default: false }) public showMessage!: boolean;
 
-  @Prop() message!: string;
+  @Prop({ default: '' }) public message!: string;
 
-  constructor() {
-    super();
-    this.message = '';
-    this.getName = true;
-    this.getAccount = false;
-    this.showMessage = false;
-  }
+  private payload: {
+    password: string;
+    name: string;
+    email: string
+  } = { password: '', name: '', email: '' };
 
-  private validateName(): boolean {
-    const { name } = this;
-    if (name.length > 0) {
-      if (name.split(' ').length !== 2) {
-        this.message = 'Please enter your first and last name.';
-        this.showMessage = true;
-      } else {
-        return true;
-      }
+  @Watch('name')
+  async onNameChange(val: string): Promise<any> {
+    if (val) {
+      await this.validateName(val);
     }
-    return false;
   }
 
-  private validateEmail(): boolean {
-    const { email } = this;
-    if (email.length > 0) {
-      if (email.split('@').length !== 2) {
-        this.message = 'Please enter a valid email address.';
-        this.showMessage = true;
-      } else {
-        return true;
-      }
+  async validateName(val: string): Promise<any> {
+    const { errors } = await validate(val, 'min:3');
+    this.errors = errors;
+  }
+
+  @Watch('email')
+  async onEmailChange(val: string): Promise<any> {
+    if (val) {
+      await this.validateEmail(val);
     }
-    return false;
   }
 
-  private validatePassword(): boolean {
-    const { password } = this;
-    const { password2 } = this;
+  async validateEmail(val: string): Promise<any> {
+    const { errors } = await validate(val, 'email');
+    this.errors = errors;
+  }
 
-    if (password.length > 0 && password2.length > 0 && password === password2) {
-      return true;
+  @Watch('password')
+  async onPasswordChange(val: string): Promise<any> {
+    if (val) {
+      await this.validatePassword(val);
     }
-
-    this.message = 'Please enter a valid password.';
-    this.showMessage = true;
-    return false;
   }
 
-  public next(): void {
-    let user;
+  async validatePassword(val:string): Promise<any> {
+    const { errors } = await validate(val, 'password:@confirmation');
+    this.errors = errors;
+  }
 
+  /**
+   * @brief Guides the user thru the registration process
+   */
+  async next(): Promise<any> {
     if (this.getName) {
-      if (this.validateName()) {
-        this.data.name = this.name;
-        this.getName = false;
-        this.getAccount = true;
-      } else {
-        this.errors.push(this.message);
-      }
+      this.getName = false;
+      this.getAccount = true;
     } else {
-      // validate email
-      if (this.validateEmail()) {
-        this.data.email = this.email;
-      }
+      this.payload = {
+        name: this.name,
+        email: this.email,
+        password: this.password,
+      };
 
-      if (this.validatePassword()) {
-        this.data.password = this.password;
-      } else {
-        this.errors.push(this.message);
+      if (this.errors.length === 0) {
+        const user = this.addUser();
       }
-
-      if (this.errors.length !== 0) {
-        user = this.addUser(this.data);
-      }
-
-      console.log(user);
     }
   }
 
-  @Emit()
-  private addUser(payload : object) {
-    axios.post(this.path, payload)
+  async addUser(): Promise<any> {
+    axios.post(this.path, this.payload)
       .then(res => res.data)
       .catch((error) => {
         // eslint-disable-next-line

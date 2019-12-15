@@ -3,6 +3,8 @@ import Vue from 'vue';
 import Buefy from 'buefy';
 import 'buefy/dist/buefy.css';
 
+import VeeValidate from 'vee-validate';
+
 import App from './App.vue';
 import router from './router';
 
@@ -16,6 +18,9 @@ import 'vue-material-design-icons/styles.css';
 Vue.config.productionTip = false;
 
 Vue.use(Buefy);
+
+// @ts-ignore
+Vue.use(VeeValidate, { inject: false });
 
 new Vue({
   router,

@@ -1386,6 +1386,13 @@
     source-map "~0.6.1"
     vue-template-es2015-compiler "^1.9.0"
 
+"@vue/composition-api@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@vue/composition-api/-/composition-api-0.1.0.tgz#0bbac2259fcb8b1cafed3ef9fdeed99d2c55676d"
+  integrity sha512-+7sWfUkfrfWCW1Imdd4raLpqyO8H+CRn8B4IwxzGXYOXfdln2T34pU8PCM/Dsy3YQX1g+ULXSws77tGF8ndKzA==
+  dependencies:
+    tslib "^1.9.3"
+
 "@vue/eslint-config-airbnb@^4.0.0":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@vue/eslint-config-airbnb/-/eslint-config-airbnb-4.0.1.tgz#bf05108851a8b04dc043a983300608529d50cc7e"
@@ -10053,7 +10060,7 @@ tsconfig@^7.0.0:
     strip-bom "^3.0.0"
     strip-json-comments "^2.0.0"
 
-tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
+tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
   integrity sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
@@ -10351,6 +10358,16 @@ vary@~1.1.2:
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
 
+vee-validate@^3.0.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/vee-validate/-/vee-validate-3.2.0.tgz#0e8b2a4307339b05df01db4d2c91ab6ed8a3b90d"
+  integrity sha512-gyC4rRl+NkG9spF9kQW85JPSCUpdd0ik5VqrfgZ4IXLCtY3xJY0xP6A+b4FUfLJZ+nAG+dClKTCsm/AeJTtVcQ==
+
+vee-validate@^3.1.3:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/vee-validate/-/vee-validate-3.1.3.tgz#24194db0d67b71d629b11a4c8030a7413da8b969"
+  integrity sha512-wqQfmblN1RUTfcj94b62bUdiRT0bkJ9KWxNG0KdVomg89JufRrs0cJeRN5XnBeNHwrPop44qwGu6YzkaXDlGeA==
+
 vendors@^1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/vendors/-/vendors-1.0.3.tgz#a6467781abd366217c050f8202e7e50cc9eef8c0"
@@ -10469,6 +10486,15 @@ vue-template-es2015-compiler@^1.6.0, vue-template-es2015-compiler@^1.9.0:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
+
+vue-use-form@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/vue-use-form/-/vue-use-form-0.0.1.tgz#7669ca80904f9a944331f98bbeb476a12a150152"
+  integrity sha512-SMvYwfY48+I0u4OWo3pWGp3BXHxCLDkv0+PrGQx2kVp3YSco5VZdRTgOdrQkZs1cNlyDcbuf/Hyh2ushTVv9wg==
+  dependencies:
+    "@vue/composition-api" "^0.1.0"
+    vee-validate "^3.0.0"
+    vue "^2.6.10"
 
 vue@^2.6.10:
   version "2.6.10"
