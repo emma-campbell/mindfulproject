@@ -19,8 +19,8 @@
 
                   <p class="title"
                      v-if="getAccount"
-                     v-bind="this.name" >
-                    Welcome, {{ this.name.split(" ")[0] }} 👋
+                     v-bind="form.name" >
+                    Welcome, {{ form.name.split(' ')[0] }} 👋
                   </p>
                   <p class="instructions"
                      v-if="getAccount">
@@ -31,7 +31,7 @@
                   <form>
                     <b-field>
                       <b-input type="text"
-                               v-model.lazy="name"
+                               v-model.lazy="form.name"
                                v-if="getName"
                                v-bind="{ 'is-danger' : errors }"
                                placeholder="Jane Doe">
@@ -40,14 +40,14 @@
 
                     <b-field label="Email" v-if="getAccount">
                       <b-input type="email"
-                               v-model.lazy="email"
+                               v-model.lazy="form.email"
                                placeholder="janedoe@gmail.com"
                                v-bind="{ 'is-danger' : errors }">
                       </b-input>
                     </b-field>
                     <b-field label="Password" v-if="getAccount">
                       <b-input type="password"
-                               v-model.lazy="password"
+                               v-model.lazy="form.password"
                                placeholder="********"
                                v-bind="{ 'is-danger' : errors }">
                       </b-input>
@@ -55,7 +55,7 @@
 
                     <b-field label="Confirm Password" v-if="getAccount" v-slot="{ errors }">
                       <b-input type="password"
-                               v-model.lazy="confirmed"
+                               v-model.lazy="form.confirm"
                                placeholder="********"
                                v-bind="{ 'is-danger' : errors }">
                       </b-input>
@@ -63,7 +63,7 @@
                   </form>
 
                   <div class="container is-pulled-right" id="submit-container">
-                    <IconButton v-on:click="next"/>
+                    <IconButton v-on:click="handleClick"/>
                   </div>
                 </div>
               </div>
@@ -77,32 +77,34 @@
 
 <script lang="ts">
 import 'reflect-metadata';
-import axios from 'axios';
-import { validate, extend, ValidationProvider } from 'vee-validate';
 
 import {
-  Vue, Inject,
+  Vue,
   Component,
-  Prop, Watch,
+  Prop,
+  Watch,
 } from 'vue-property-decorator';
 
-import IconButton from '@/components/IconButton.vue';
+import { required, minLength, sameAs } from 'vuelidate/lib/validators';
+import IconButton from '../components/IconButton.vue';
+
+import ApiService from '@/services/apiService';
+import { isValidName } from '@/utils/validate';
+
+interface registerForm {
+  name?: String,
+  email?: String,
+  password?: String,
+  confirm?: String,
+}
 
 @Component({
-  components: { IconButton, ValidationProvider },
+  components: { IconButton },
 })
 export default class Register extends Vue {
   path: string = 'http://localhost:5000/api/users/';
 
   private errors: string[] = [];
-
-  @Prop({ default: '' }) public name!: string;
-
-  @Prop({ default: '' }) public email!: string;
-
-  @Prop({ default: '' }) public password!: string;
-
-  @Prop({ default: '' }) public confirmation!: string;
 
   @Prop({ default: false }) public validated!: boolean;
 
@@ -114,76 +116,69 @@ export default class Register extends Vue {
 
   @Prop({ default: '' }) public message!: string;
 
-  private payload: {
-    password: string;
-    name: string;
-    email: string
-  } = { password: '', name: '', email: '' };
+  @Prop({ default: {} }) public form!: registerForm;
+  //
+  // @Watch('form.name')
+  // private validateName = (rule: any, value: string, callback: Function) => {
+  //   if (!isValidName(value)) {
+  //     callback(new Error('Please enter your first & last name (must be > 3 characters).'));
+  //   } else {
+  //     callback();
+  //   }
+  // };
+  //
+  // @Watch('form.email')
+  // private validateEmail = (rule: any, value: string, callback: Function) => {
+  // eslint-disable-next-line
+  //   const regexp = new RegExp(/\^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+  //
+  //   if (!regexp.test(value)) {
+  //     callback(new Error('Please enter a valid email.'));
+  //   } else {
+  //     callback();
+  //   }
+  // };
+  //
+  // @Watch('form.password')
+  // private validatePassword = (rule: any, value: string, callback: Function) => {
+  //   if (value.length > 8) {
+  //     callback(new Error('Your password cannot be less than 8 characters.'));
+  //   } else {
+  //     callback();
+  //   }
+  // };
+  //
+  // @Watch('form.confirm')
+  // private validateConfirmation = (rule: any, value: string, callback: Function) => {
+  //   if (value !== this.form.password) {
+  //
+  //   } else {
+  //     callback();
+  //   }
+  // };
 
-  @Watch('name')
-  async onNameChange(val: string): Promise<any> {
-    if (val) {
-      await this.validateName(val);
-    }
-  }
-
-  async validateName(val: string): Promise<any> {
-    const { errors } = await validate(val, 'min:3');
-    this.errors = errors;
-  }
-
-  @Watch('email')
-  async onEmailChange(val: string): Promise<any> {
-    if (val) {
-      await this.validateEmail(val);
-    }
-  }
-
-  async validateEmail(val: string): Promise<any> {
-    const { errors } = await validate(val, 'email');
-    this.errors = errors;
-  }
-
-  @Watch('password')
-  async onPasswordChange(val: string): Promise<any> {
-    if (val) {
-      await this.validatePassword(val);
-    }
-  }
-
-  async validatePassword(val:string): Promise<any> {
-    const { errors } = await validate(val, 'password:@confirmation');
-    this.errors = errors;
-  }
+  // private registerRules = {
+  //   name: [{ validator: this.validateName, trigger: 'blur' }],
+  //   email: [{ validator: this.validateEmail, trigger: 'blur' }],
+  //   password: [{ validator: this.validatePassword, trigger: 'blur' }],
+  // };
 
   /**
    * @brief Guides the user thru the registration process
    */
-  async next(): Promise<any> {
+  private handleClick(): void {
     if (this.getName) {
       this.getName = false;
       this.getAccount = true;
+      console.log(this.form.name);
     } else {
-      this.payload = {
-        name: this.name,
-        email: this.email,
-        password: this.password,
-      };
-
-      if (this.errors.length === 0) {
-        const user = this.addUser();
+      // eslint-disable-next-line
+      if (!ApiService.registerUser(this.form)) {
+        throw Error('Oops! Something went wrong. Please check that all the fields are correct.');
+      } else {
+        this.$router.push('/');
       }
     }
   }
-
-  async addUser(): Promise<any> {
-    axios.post(this.path, this.payload)
-      .then(res => res.data)
-      .catch((error) => {
-        // eslint-disable-next-line
-        console.log(error);
-      });
-  }
 }
 </script>
-<style src="./styles.scss" lang="scss"></style>

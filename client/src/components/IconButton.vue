@@ -18,7 +18,7 @@ export default class IconButton extends Vue {
   @Emit()
   public onClick(): void {
     // eslint-disable-next-line
-    this.$emit('click')
+    this.$emit('click');
     console.log('click');
   }
 }

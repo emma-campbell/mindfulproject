@@ -24,6 +24,6 @@ $family-sans-serif: 'Open Sans', sans-serif;
     padding-bottom: 0px;
 }
 
-@import "bulma";
-@import "buefy/src/scss/buefy";
-@import "bulma-divider/src/sass/index.sass"
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
+@import "~bulma-divider/src/sass/index.sass";
