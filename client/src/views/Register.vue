@@ -29,7 +29,7 @@
 
                   <br v-if="getName">
                   <form>
-                    <b-field>
+                    <b-field slot="{{ errors[0]}}">
                       <b-input type="text"
                                v-model.lazy="form.name"
                                v-if="getName"
@@ -85,11 +85,10 @@ import {
   Watch,
 } from 'vue-property-decorator';
 
-import { required, minLength, sameAs } from 'vuelidate/lib/validators';
 import IconButton from '../components/IconButton.vue';
 
 import ApiService from '@/services/apiService';
-import { isValidName } from '@/utils/validate';
+import Validator from '@/utils/validate';
 
 interface registerForm {
   name?: String,
@@ -104,7 +103,7 @@ interface registerForm {
 export default class Register extends Vue {
   path: string = 'http://localhost:5000/api/users/';
 
-  private errors: string[] = [];
+  private errors: Error[] = [];
 
   @Prop({ default: false }) public validated!: boolean;
 
@@ -117,15 +116,15 @@ export default class Register extends Vue {
   @Prop({ default: '' }) public message!: string;
 
   @Prop({ default: {} }) public form!: registerForm;
-  //
-  // @Watch('form.name')
-  // private validateName = (rule: any, value: string, callback: Function) => {
-  //   if (!isValidName(value)) {
-  //     callback(new Error('Please enter your first & last name (must be > 3 characters).'));
-  //   } else {
-  //     callback();
-  //   }
-  // };
+
+  @Watch('form.name')
+  private validateName = (value: string) => {
+    console.log('Validating name');
+    if (!Validator.isValidName(value)) {
+      this.errors.push(new Error('Please be sure to enter your first and last name.'));
+    }
+  };
+
   //
   // @Watch('form.email')
   // private validateEmail = (rule: any, value: string, callback: Function) => {
@@ -170,14 +169,8 @@ export default class Register extends Vue {
     if (this.getName) {
       this.getName = false;
       this.getAccount = true;
-      console.log(this.form.name);
     } else {
-      // eslint-disable-next-line
-      if (!ApiService.registerUser(this.form)) {
-        throw Error('Oops! Something went wrong. Please check that all the fields are correct.');
-      } else {
-        this.$router.push('/');
-      }
+      console.log(this.form);
     }
   }
 }
