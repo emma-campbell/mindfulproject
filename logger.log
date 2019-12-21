@@ -494,3 +494,15 @@ INFO 2019-12-18 11:27:16,616 { module name : __init__ Line no : 33} Adding error
 INFO 2019-12-20 19:10:07,097 { module name : run Line no : 77} [34mmethod=OPTIONS[0m [34mpath=/users[0m [33mstatus=404[0m [32mduration=0.01[0m [35mtime=2019-12-21T00:10:07Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
 INFO 2019-12-20 19:10:21,361 { module name : run Line no : 77} [34mmethod=OPTIONS[0m [34mpath=/users[0m [33mstatus=404[0m [32mduration=0.0[0m [35mtime=2019-12-21T00:10:21Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
 INFO 2019-12-20 19:25:24,817 { module name : run Line no : 77} [34mmethod=OPTIONS[0m [34mpath=/users[0m [33mstatus=404[0m [32mduration=0.0[0m [35mtime=2019-12-21T00:25:24Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-21 11:43:12,026 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-21 11:43:12,026 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-21 11:43:12,026 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-21 11:43:12,031 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-21 11:43:12,040 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-21 11:43:12,040 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-21 11:43:12,040 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-21 11:43:12,042 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-21 11:43:12,044 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-21 11:43:12,045 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-21 11:43:12,045 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-21 11:43:12,046 { module name : __init__ Line no : 33} Adding error handlers
