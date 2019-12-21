@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17cac6ea-b47c-4f93-9fc3-06f03f4cfbea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/plugins/vee-validate.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/emma.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/emma.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/services/apiService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/apiService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/shims-tsx.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shims-tsx.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/modules/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/modules/user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/utils/validate.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/Register.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logger.log" beforeDir="false" afterPath="$PROJECT_DIR$/logger.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -222,12 +212,12 @@
       <workItem from="1576203800381" duration="6582000" />
       <workItem from="1576253185070" duration="180000" />
       <workItem from="1576253367817" duration="15983000" />
-      <workItem from="1576686418784" duration="28234000" />
+      <workItem from="1576686418784" duration="28420000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60989000" />
+    <option name="totallyTimeSpent" value="61175000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
