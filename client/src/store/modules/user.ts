@@ -1,5 +1,5 @@
 import { VuexModule, Module, Action, Mutation, getModule } from "vuex-module-decorators";
-import ApiService from '@/services/apiService';
+import { loginUser } from '@/services/apiService';
 import { getToken, setToken, removeToken } from '@/utils/cookies';
 import router from '@/router';
 import store from '@/store';
@@ -44,7 +44,7 @@ class User extends VuexModule implements IUserState {
     email = email.trim();
 
     // send the request to the server
-    const { data } = await ApiService.loginUser({ email, password });
+    const { data } = await loginUser({ email, password });
 
     // add the token to cookies and set the token in vuex
     setToken(data.access_token);

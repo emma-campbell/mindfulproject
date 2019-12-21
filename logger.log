@@ -456,3 +456,41 @@ INFO 2019-12-12 20:38:35,401 { module name : __init__ Line no : 33} Adding error
 INFO 2019-12-12 20:38:35,884 { module name : __init__ Line no : 27} Registering extensions
 INFO 2019-12-12 20:38:35,891 { module name : __init__ Line no : 30} Adding routes
 INFO 2019-12-12 20:38:35,893 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-12 20:44:53,130 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-12 20:44:53,137 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-12 20:44:53,140 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-12 20:44:53,610 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-12 20:44:53,616 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-12 20:44:53,618 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-12 21:18:47,381 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-12 21:18:47,389 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-12 21:18:47,392 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-12 21:18:47,882 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-12 21:18:47,892 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-12 21:18:47,895 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-13 11:04:40,136 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-13 11:04:40,158 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-13 11:04:40,160 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-13 11:04:40,479 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-13 11:04:40,487 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-13 11:04:40,489 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-13 15:25:56,128 { module name : run Line no : 77} [34mmethod=GET[0m [34mpath=/auth/confirm/ImVjYW1wYjEwQHUucm9jaGVzdGVyLmVkdSI.XfPzvw.Jp8uP1IfS-W453AbFg4IVt6WkhA[0m [33mstatus=404[0m [32mduration=0.0[0m [35mtime=2019-12-13T20:25:56Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-13 15:32:51,817 { module name : run Line no : 77} [34mmethod=OPTIONS[0m [34mpath=/api/users/[0m [33mstatus=404[0m [32mduration=0.0[0m [35mtime=2019-12-13T20:32:51Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-13 15:33:06,962 { module name : run Line no : 77} [34mmethod=OPTIONS[0m [34mpath=/api/users/[0m [33mstatus=404[0m [32mduration=0.0[0m [35mtime=2019-12-13T20:33:06Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-13 15:33:44,481 { module name : run Line no : 77} [34mmethod=OPTIONS[0m [34mpath=/api/users/[0m [33mstatus=404[0m [32mduration=0.0[0m [35mtime=2019-12-13T20:33:44Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-13 16:02:40,439 { module name : run Line no : 77} [34mmethod=OPTIONS[0m [34mpath=/api/users/[0m [33mstatus=404[0m [32mduration=0.0[0m [35mtime=2019-12-13T21:02:40Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-13 16:02:42,021 { module name : run Line no : 77} [34mmethod=OPTIONS[0m [34mpath=/api/users/[0m [33mstatus=404[0m [32mduration=0.0[0m [35mtime=2019-12-13T21:02:42Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-13 16:02:42,168 { module name : run Line no : 77} [34mmethod=OPTIONS[0m [34mpath=/api/users/[0m [33mstatus=404[0m [32mduration=0.0[0m [35mtime=2019-12-13T21:02:42Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-13 16:02:42,297 { module name : run Line no : 77} [34mmethod=OPTIONS[0m [34mpath=/api/users/[0m [33mstatus=404[0m [32mduration=0.0[0m [35mtime=2019-12-13T21:02:42Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-13 16:02:42,433 { module name : run Line no : 77} [34mmethod=OPTIONS[0m [34mpath=/api/users/[0m [33mstatus=404[0m [32mduration=0.0[0m [35mtime=2019-12-13T21:02:42Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-13 16:02:42,549 { module name : run Line no : 77} [34mmethod=OPTIONS[0m [34mpath=/api/users/[0m [33mstatus=404[0m [32mduration=0.0[0m [35mtime=2019-12-13T21:02:42Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-13 16:09:24,882 { module name : run Line no : 77} [34mmethod=OPTIONS[0m [34mpath=/api/users/[0m [33mstatus=404[0m [32mduration=0.0[0m [35mtime=2019-12-13T21:09:24Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-18 11:27:14,291 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-18 11:27:14,435 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-18 11:27:14,445 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-18 11:27:16,606 { module name : __init__ Line no : 27} Registering extensions
+INFO 2019-12-18 11:27:16,613 { module name : __init__ Line no : 30} Adding routes
+INFO 2019-12-18 11:27:16,616 { module name : __init__ Line no : 33} Adding error handlers
+INFO 2019-12-20 19:10:07,097 { module name : run Line no : 77} [34mmethod=OPTIONS[0m [34mpath=/users[0m [33mstatus=404[0m [32mduration=0.01[0m [35mtime=2019-12-21T00:10:07Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-20 19:10:21,361 { module name : run Line no : 77} [34mmethod=OPTIONS[0m [34mpath=/users[0m [33mstatus=404[0m [32mduration=0.0[0m [35mtime=2019-12-21T00:10:21Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
+INFO 2019-12-20 19:25:24,817 { module name : run Line no : 77} [34mmethod=OPTIONS[0m [34mpath=/users[0m [33mstatus=404[0m [32mduration=0.0[0m [35mtime=2019-12-21T00:25:24Z[0m [31mip=127.0.0.1[0m [31mhost=localhost[0m [34mparams={}[0m
