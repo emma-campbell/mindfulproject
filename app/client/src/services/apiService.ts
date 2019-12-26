@@ -4,8 +4,8 @@ const apiClient = axios.create({
   baseURL: 'http://localhost:5000',
   withCredentials: false,
   headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
+    Accept: 'server/json',
+    'Content-Type': 'server/json',
   },
   timeout: 1000,
 });

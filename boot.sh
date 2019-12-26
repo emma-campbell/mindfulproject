@@ -1,5 +1,5 @@
 #!/bin/sh
-# this script is used to boot a Docker container
+# this script is used to boot the docker container
 source venv/bin/activate
 while true; do
     flask db upgrade
@@ -9,4 +9,4 @@ while true; do
     echo Deploy command failed, trying again in 5 seconds...
     sleep 5
 done
-exec gunicorn -b --access-logfile - --error-logfile - application:create_app
+exec gunicorn -b :5000 --access-logfile - --error-logfile - run:app
