@@ -12,9 +12,16 @@ load_dotenv(os.path.join(APP_DIR), '.env')
 
 class Config(object):
     """Base Configuration for the Application Instance"""
+    
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
 
-    SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI') or \
+    USER = os.environ.get('POSTGRES_USER') or 'mindful'
+    PASSWORD = os.environ.get('POSTGRES_PASSWORD') or 'secret-passkey'
+    DATABASE_NAME = os.environ.get('POSTGRES_DB') or 'mindful_db'
+    SQL_HOST = 'db'
+    SQL_PORT = os.environ.get('POSTGRES_PORT') or 5432      
+
+    SQLALCHEMY_DATABASE_URI = f'postgresql+psycopg2://{USER}:{PASSWORD}@{SQL_HOST}:{SQL_PORT}/{DATABASE_NAME}' or \
         "sqlite:///{}".format(os.path.join(APP_DIR, 'app.db'))
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
@@ -25,9 +32,12 @@ class Config(object):
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME') or None
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD') or None
 
+    # Authentication Configurations
     JWT_ACCESS_LIFESPAN = pendulum.duration(hours=24)
     JWT_REFRESH_LIFESPAN = pendulum.duration(days=30)
-
+    PRAETORIAN_CONFIRMATION_SENDER = MAIL_USERNAME
+    PRAETORIAN_CONFIRMATION_SUBJECT = 'Welcome to Mindful [Please Confirm your email!]'
+    
     OAUTH_CREDENTIALS = {
         'google' : {
             'id' : os.environ.get('GOOGLE_OAUTH_CLIENTID'),
@@ -48,15 +58,6 @@ class DevConfig(Config):
 
     ENV = 'dev'
     DEBUG =  True
-
-    DB_NAME = 'app.db'
-    DB_PATH = os.path.join(APP_DIR, DB_NAME)
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///{0}'.format(DB_PATH)
-    SQLALCHEMY_TRACK_MODIFICATIONS = True
-    PRAETORIAN_CONFIRMATION_SENDER = Config.MAIL_USERNAME
-    PRAETORIAN_CONFIRMATION_SUBJECT = 'Welcome to Mindful [Please Confirm your email!]'
-    HOST = 'localhost:5000'
-
 
 
 class TestConfig(Config):

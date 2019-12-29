@@ -1,8 +1,8 @@
 from flask.helpers import get_debug_flag
 from flask_migrate import Migrate
 
-from application import create_app, db, cli
-from application.api.users.model import User
+from app import create_app, db, cli
+from app.api.users.model import User
 
 from flask.cli import with_appcontext
 from werkzeug.exceptions import MethodNotAllowed, NotFound
@@ -30,7 +30,6 @@ cli.register(app)
 @app.shell_context_processor
 def make_shell_context():
     return dict(db=db, User=User)
-
 
 @app.before_request
 def start_timer():

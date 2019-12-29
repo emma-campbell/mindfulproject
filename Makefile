@@ -1,9 +1,8 @@
 DOCKER := docker
 DOCKER_COMPOSE := docker-compose
 API_CONTAINER := server
-DB_CONTAINER := mysql
+DB_CONTAINER := db
 FLASK := flask
-
 
 .PHONY: nuke
 nuke:
@@ -19,11 +18,8 @@ up:
 
 .PHONY: setup
 setup: up
-	${DOCKER_COMPOSE} run ${API_CONTAINER} ${FLASK}
-	${DOCKER_COMPOSE} run ${API_CONTAINER} ${FLASK} db-migrate create-tables
-	${DOCKER_COMPOSE} run ${API_CONTAINER} ${FLASK} db stamp head
-	${DOCKER_COMPOSE} run ${API_CONTAINER} ${FLASK} db-migrate init
-
+	${DOCKER_COMPOSE} run ${API_CONTAINER} ${FLASK} db migrate
+	${DOCKER_COMPOSE} run ${API_CONTAINER} ${FLASK} db upgrade
 
 .PHONY: migrate
 migrate: build
@@ -32,7 +28,6 @@ migrate: build
 
 teardown:
 	${DOCKER_COMPOSE} down
-
 
 wipe: teardown
 	${DOCKER} system prune --all

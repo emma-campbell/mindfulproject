@@ -1,44 +1,32 @@
-version: '3'
+version: '3.5'
 services:
   server:
     image: server:latest
-    build: ./app/server
+    build: ./server
     container_name: server
-    volumes:
-        - .:/app
+    env_file: 
+      - '.env'
     ports:
       - 5000:5000
-    depends_on:
+    links:
       - db
 
-  web:
-    image: web:latest
-    build: ./app/client
-    container_name: web
-    ports:
-      - 8081:8080
+  data:
+    container_name: data
+    image: postgres:latest
+    volumes:
+      - /var/lib/postgresql
+    command: "true"
 
   db:
-    image: mysql
+    container_name: db
     restart: always
-    environment:
-      MYSQL_DATABASE: 'db'
-      MYSQL_USER: 'user'
-      MYSQL_PASSWORD: 'password'
+    build: ./db
     ports:
-      - 5432:5432
-    volumes:
-      - data:/var/lib/mysql
-
-  nginx:
-    image: nginx
-    build: app/nginx
-    container_name: nginx
-    volumes:
-      - ./conf.d:/etc/nginx/conf.d
-    depends_on:
-      - server
-      - web
-
-volumes:
-  data:
+      - 5454:5432
+    volumes: 
+      - data
+    environment:
+      POSTGRES_DB: mindful_db
+      POSTGRES_USER: mindful
+      POSTGRES_PASSWORD: secret-passkey

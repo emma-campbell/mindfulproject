@@ -1,4 +1,4 @@
-from application.extensions import db, auth
+from app.extensions import db, auth
 from ..errors import bad_request
 
 from flask import url_for, current_app
@@ -13,7 +13,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
     email = db.Column(db.String(120), index=True, unique=True)
-    password = db.Column(db.String(128))
+    password = db.Column(db.String())
 
     # social_id is where we store oauth token
     social_id = db.Column(db.String(64), unique=True)

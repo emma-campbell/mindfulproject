@@ -2,7 +2,7 @@ from flask import render_template, redirect, url_for, flash, request, jsonify
 from sqlalchemy.exc import IntegrityError
 from datetime import datetime
 
-from application.extensions import auth
+from app.extensions import auth
 
 from .. import api
 from ..users.model import User

@@ -2,72 +2,73 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17cac6ea-b47c-4f93-9fc3-06f03f4cfbea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/client/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/client/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/nginx/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/nginx/nginx.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/server/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/server/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/server/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/api/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/server/api/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/api/auth/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/server/api/auth/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/api/auth/oauth.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/server/api/auth/oauth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/api/auth/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/server/api/auth/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/api/errors.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/server/api/errors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/api/users/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/server/api/users/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/api/users/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/server/api/users/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/api/users/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/server/api/users/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/server/cli.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/server/exceptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/extensions.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/server/extensions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/logging.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/server/logging.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boot.sh" beforeDir="false" afterPath="$PROJECT_DIR$/app/server/boot.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.browserslistrc" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/.browserslistrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/.eslintrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/babel.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/jest.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/jest.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/emoji.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/public/emoji.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/emoji.svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/public/emoji.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/logo-sm.ai" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/src/assets/logo-sm.ai" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/logo-sm.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/src/assets/logo-sm.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/src/assets/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/src/assets/scss/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Form.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/src/components/Form.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/HelloWorld.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/src/components/HelloWorld.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/IconButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/src/components/IconButton.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Nav.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/src/components/Nav.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/\" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/src/components/\" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/plugins/vee-validate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/src/plugins/vee-validate.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/src/router/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/services/apiService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/src/services/apiService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/shims-tsx.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/src/shims-tsx.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/shims-vue.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/src/shims-vue.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/src/store/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/modules/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/src/store/modules/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/modules/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/src/store/modules/user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/tests/unit/example.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/src/tests/unit/example.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/utils/cookies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/src/utils/cookies.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/About.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/src/views/About.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/src/views/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/src/views/Register.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/server/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/server/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/server/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/.browserslistrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/.dockerignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/.eslintrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/babel.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/jest.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/public/emoji.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/public/emoji.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/src/assets/logo-sm.ai" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/src/assets/logo-sm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/src/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/src/assets/scss/styles.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/src/components/Form.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/src/components/IconButton.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/src/components/Nav.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/src/components/\" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/src/plugins/vee-validate.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/src/router/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/src/services/apiService.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/src/shims-tsx.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/src/shims-vue.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/src/store/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/src/store/modules/app.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/src/store/modules/user.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/src/tests/unit/example.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/src/utils/cookies.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/src/views/About.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/src/views/Home.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/src/views/Register.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/nginx/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/nginx/nginx.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/server/.dockerignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/server/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/server/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/server/api/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/server/api/auth/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/server/api/auth/oauth.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/server/api/auth/routes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/server/api/errors.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/server/api/users/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/server/api/users/model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/server/api/users/routes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/server/cli.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/server/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/server/exceptions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/server/extensions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/server/logging.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/server/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/server/run.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/alembic.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/env.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/script.py.mako" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -84,34 +85,16 @@
         <entry file="file://$PROJECT_DIR$/Makefile">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="54">
-              <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/server/boot.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+              <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/server/Dockerfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+            <state relative-caret-position="558">
+              <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -173,8 +156,8 @@
         <option value="$PROJECT_DIR$/Makefile" />
         <option value="$PROJECT_DIR$/app/nginx/Dockerfile" />
         <option value="$PROJECT_DIR$/boot.sh" />
-        <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/app/server/Dockerfile" />
+        <option value="$PROJECT_DIR$/docker-compose.yml" />
       </list>
     </option>
   </component>
@@ -188,7 +171,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -196,21 +178,11 @@
               <item name="mindfulproject" type="b2602c69:ProjectViewProjectNode" />
               <item name="mindfulproject" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="mindfulproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mindfulproject" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mindfulproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mindfulproject" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -286,16 +258,18 @@
       <workItem from="1577236064323" duration="3745000" />
       <workItem from="1577308295537" duration="4402000" />
       <workItem from="1577327484147" duration="1000" />
+      <workItem from="1577660030462" duration="46000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71987000" />
+    <option name="totallyTimeSpent" value="72033000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2267525" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22961374" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -550,13 +524,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Makefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/server/boot.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -564,17 +531,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/server/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
         </state>
       </provider>
     </entry>

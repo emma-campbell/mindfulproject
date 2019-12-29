@@ -40,11 +40,7 @@ def create_app(config_object=ProdConfig):
     )
 
     with app.app_context():
-
         from . import extensions, exceptions, api
-
-        if app.config['ENV'] == 'dev':
-            db.drop_all()
         db.create_all()
     return app
 
