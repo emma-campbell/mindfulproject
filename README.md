@@ -17,40 +17,30 @@ Today, journaling is a popular way to track things like our habits, thoughts and
 
 ## Running
 
-Begin by activating a new virtual environment. On MacOS, this can be done by:
+For cross-platform reliability, development and running of this application is done through [Docker](https://www.docker.com/get-started). After installing, make sure that you have both
+Docker and docker-compose installed on your machine by issuing the command
 
+```bash
+docker --version
 ```
-python3 -m virtualenv venv
+and
+```bash
+docker-compose --version
 ```
+Once you have docker, set up is simple. With the provided Makefile you
+can get all the containers up and running by executing
 
-and then activate this environment by running `. venv/bin/activate`. Once you are in your virtualenv, you can install all the required dependencies using the command
-
-```
-pip install -r requirements.txt
-```
-
-Now, you're going to want to create a `.env` file to toggle all your environment settings.
-
-Run the following command to set up the required options!
-```
-cp .env-example .env
+```bash
+make up
 ```
 
-The last step before being able to run is generating your SSL certificate. Make sure you have [openssl](https://www.openssl.org/) installed on your system and run the command
-```
-openssl req -x509 -newkey rsa:4096 -nodes -out cert.pem -keyout key.pem -days 365
+## Debugging
+
+The command `make up` doesn't show the logs of all containers by default, 
+to check the logs, run 
+
+```bash
+docker logs <container-name>
 ```
 
-Finally, run `flask run` and if everything is successful you should see the following:
-```
-* Environment: production
-   WARNING: This is a development server. Do not use it in a production deployment.
-   Use a production WSGI server instead.
- * Debug mode: off
- * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-127.0.0.1 - - [09/Nov/2019 16:26:25] "GET / HTTP/1.1" 200 -
-```
-
-### Dependencies
-
-To run and develop this application, you must use `virtualenv`. You can find download instructions in its documentation [here](https://virtualenv.pypa.io/en/latest/).
+to view the logs of a specific container.
