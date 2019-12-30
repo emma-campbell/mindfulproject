@@ -12,4 +12,4 @@ while ! nc -z $SQL_HOST $SQL_PORT; do
 done
 
 echo Postgres started!
-exec gunicorn -b :5000 run:app --reloads
+exec gunicorn -b :5000 --access-logfile - run:app --reload

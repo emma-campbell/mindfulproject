@@ -41,6 +41,6 @@ def confirm():
     return jsonify(ret), 200
 
 
-@api.route('/user/<int:id>', methods=['GET'])
+@api.route('/users/<int:id>', methods=['GET'])
 def get_user(id):
     return jsonify(User.identify(id).to_dict())

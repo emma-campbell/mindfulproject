@@ -34,6 +34,7 @@ can get all the containers up and running by executing
 make up
 ```
 
+After this, navigate to http://localhost:8080 and check it out!
 ## Debugging
 
 The command `make up` doesn't show the logs of all containers by default, 

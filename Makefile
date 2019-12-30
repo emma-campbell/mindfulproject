@@ -29,7 +29,7 @@ lint:
 .PHONY: clean
 clean:
 	${DOCKER} exec ${API_CONTAINER} ${FLASK} clean
-	
+
 .PHONY: migrate
 migrate: build
 	${DOCKER_COMPOSE} run ${API_CONTAINER} ${FLASK} db migrate

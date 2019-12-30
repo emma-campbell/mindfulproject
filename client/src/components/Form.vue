@@ -8,19 +8,19 @@ i<template>
 </template>
 
 <script lang="ts">
-  import Vue from 'vue';
+import Vue from 'vue';
 
-  export default {
+export default {
 
-    name: 'Form',
-    data() {
-      return {
-        fields: [],
-      };
-    },
-    methods: {
+  name: 'Form',
+  data() {
+    return {
+      fields: [],
+    };
+  },
+  methods: {
 
-    }
-  }
+  },
+};
 
 </script>

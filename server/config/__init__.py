@@ -64,7 +64,6 @@ class TestConfig(Config):
     """Test configuration."""
 
     TESTING = True
-    DEBUG = True
     SQLALCHEMY_DATABASE_URI = 'sqlite://'
 
 class StagingConfig(Config):
