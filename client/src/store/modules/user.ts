@@ -1,4 +1,6 @@
-import { VuexModule, Module, Action, Mutation, getModule } from "vuex-module-decorators";
+import {
+  VuexModule, Module, Action, Mutation, getModule,
+} from 'vuex-module-decorators';
 import { loginUser } from '@/services/apiService';
 import { getToken, setToken, removeToken } from '@/utils/cookies';
 import router from '@/router';
@@ -14,8 +16,11 @@ export interface IUserState {
 @Module({ dynamic: true, store, name: 'user' })
 class User extends VuexModule implements IUserState {
   public token = getToken() || '';
+
   public id = undefined;
+
   public name = '';
+
   public email = '';
 
   @Mutation

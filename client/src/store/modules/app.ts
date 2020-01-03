@@ -1,4 +1,6 @@
-import { VuexModule, Module, Mutation, Action, getModule } from 'vuex-module-decorators';
+import {
+  VuexModule, Module, Mutation, Action, getModule,
+} from 'vuex-module-decorators';
 import store from '@/store';
 
 export enum DeviceType {
@@ -11,7 +13,7 @@ export interface IAppState {
 }
 
 @Module({ dynamic: true, store, name: 'app' })
-class App extends VuexModule implements  IAppState {
+class App extends VuexModule implements IAppState {
   public device = DeviceType.Desktop;
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <section class="hero is-fullheight gradient" id="reg">
+  <section class="hero is-fullheight gradient">
     <div class="hero-body">
       <div class="container">
         <div class="columns is-centered">
@@ -7,7 +7,11 @@
             <div class="box">
               <div class="card-content">
                 <div class="container">
-
+                  <loading :active.sync="isLoading"
+                          :can-cancel="false"
+                          :is-full-page="false"
+                          loader="dots"
+                          color="#8C00B6"></loading>
                   <p class="title"
                      v-if="getName">
                     We're excited to have you 🎉
@@ -71,7 +75,6 @@
                       </ValidationProvider>
                     </form>
                   </ValidationObserver>
-                  <br>
                   <div class="container is-pulled-right" id="submit-container">
                     <IconButton v-on:click="handleClick"/>
                   </div>
@@ -86,7 +89,6 @@
 </template>
 
 <script lang="ts">
-// library imports
 import 'reflect-metadata';
 import {
   Vue,
@@ -96,6 +98,9 @@ import {
 
 import { ValidationProvider, ValidationObserver } from 'vee-validate';
 import '@/plugins/vee-validate';
+
+import Loading from 'vue-loading-overlay';
+import 'vue-loading-overlay/dist/vue-loading.css';
 
 import IconButton from '@/components/IconButton.vue';
 import { registerUser } from '@/services/apiService';
@@ -112,16 +117,17 @@ interface registerForm {
     IconButton,
     ValidationProvider,
     ValidationObserver,
+    Loading,
   },
 })
 export default class Register extends Vue {
-  path: string = 'http://localhost:5000/api/users/';
-
   @Prop({ default: true }) public getName!: boolean;
 
   @Prop({ default: false }) public getAccount!: boolean;
 
   @Prop({ default: false }) public showMessage!: boolean;
+
+  @Prop({ default: false }) public isLoading!: boolean;
 
   @Prop({ default: '' }) public message!: string;
 
@@ -135,8 +141,18 @@ export default class Register extends Vue {
       this.getName = false;
       this.getAccount = true;
     } else {
-      const data = await registerUser(this.form);
-      console.log(data);
+      this.isLoading = true;
+      const user = await registerUser(this.form)
+        .catch((err) => {
+          this.message = err.message;
+          this.$buefy.snackbar.open({
+            message: this.message,
+            type: 'is-danger',
+            position: 'is-top',
+            actionText: 'Dismiss',
+          });
+        });
+      this.$router.push('/confirm');
     }
   }
 }

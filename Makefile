@@ -35,8 +35,18 @@ migrate: build
 	${DOCKER_COMPOSE} run ${API_CONTAINER} ${FLASK} db migrate
 	${DOCKER_COMPOSE} run ${API_CONTAINER} ${FLASK} db upgrade
 
+.PHONY: teardown
 teardown:
 	${DOCKER_COMPOSE} down
 
+.PHONY: wipe
 wipe: teardown
 	${DOCKER} system prune --all
+
+.PHONY: reset
+reset:
+	make teardown && make up
+
+#.PHONE: test
+#test:
+#	${DOCKER} exec ${API_CONTAINER} ${FLASK} test

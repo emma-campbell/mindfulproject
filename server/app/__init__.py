@@ -57,7 +57,7 @@ def register_extensions(app):
     auth.init_app(app, User)
 
     # set up CORS so this app can talk w/ the frontend {@code client}
-    CORS(app, resources={r'/*': {'origins' : '*'}})
+    CORS(app, resources={r"/api": {"origins": "http://localhost:8080"}})
 
 def register_blueprints(app):
     """Register Flask blueprints."""

@@ -13,8 +13,10 @@ load_dotenv(os.path.join(APP_DIR), '.env')
 class Config(object):
     """Base Configuration for the Application Instance"""
     
+    # Secret Key
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
 
+    # Database Configuration
     USER = os.environ.get('POSTGRES_USER') or 'mindful'
     PASSWORD = os.environ.get('POSTGRES_PASSWORD') or 'secret-passkey'
     DATABASE_NAME = os.environ.get('POSTGRES_DB') or 'mindful_db'
@@ -26,6 +28,7 @@ class Config(object):
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+    # Mail Configuration
     MAIL_SERVER = os.environ.get('MAIL_SERVER') or None
     MAIL_USE_TLS = True
     MAIL_PORT = os.environ.get('MAIL_PORT') or None

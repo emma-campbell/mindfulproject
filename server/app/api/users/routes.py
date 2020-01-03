@@ -1,5 +1,5 @@
 from flask import jsonify, request, url_for, g, current_app
-
+from flask_cors import cross_origin
 from app.extensions import db, auth
 from .. import api
 from .model import User
@@ -8,6 +8,7 @@ from datetime import datetime
 
 
 @api.route('/users', methods=['POST'])
+@cross_origin(origin='localhost', headers=['Content-Type', 'access-control-allow-origin'])
 def register():
     """"""
     req = dict(request.get_json(force=True))
@@ -26,6 +27,7 @@ def register():
 
 
 @api.route('/confirm', methods=['POST'])
+@cross_origin(origin='localhost', headers=['Content-Type', 'access-control-allow-origin'])
 def confirm():
     """"""
     logger = current_app.logger
@@ -42,5 +44,6 @@ def confirm():
 
 
 @api.route('/users/<int:id>', methods=['GET'])
+@cross_origin(origin='localhost', headers=['Content-Type', 'access-control-allow-origin'])
 def get_user(id):
     return jsonify(User.identify(id).to_dict())

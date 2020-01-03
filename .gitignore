@@ -8,3 +8,8 @@ node_modules
 key.pem
 cert.pem
 app.db
+
+.vscode
+.idea
+conf.d
+logger.log

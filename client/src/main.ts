@@ -10,7 +10,6 @@ import 'bulma/bulma.sass';
 import '@/assets/scss/styles.scss';
 
 import '@mdi/font/css/materialdesignicons.css';
-
 import 'vue-material-design-icons/styles.css';
 import 'es6-promise';
 
