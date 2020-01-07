@@ -152,7 +152,7 @@ export default class Register extends Vue {
             actionText: 'Dismiss',
           });
         });
-      this.$router.push('/confirm');
+      this.$router.push('/');
     }
   }
 }
